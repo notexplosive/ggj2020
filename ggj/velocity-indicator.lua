@@ -21,6 +21,9 @@ function VelocityIndicator:draw(x, y)
         local offsetPos = centerPos + percentVec * radius
         love.graphics.circle("line", offsetPos.x, offsetPos.y, 10)
         love.graphics.line(centerPos.x, centerPos.y, offsetPos.x, offsetPos.y)
+        local directionPos = centerPos + Vector.newPolar(radius, player:angle())
+        love.graphics.setColor(0.5, 1, 0.5, 1)
+        love.graphics.line(centerPos.x, centerPos.y, directionPos.x, directionPos.y)
     end
 end
 
