@@ -18,7 +18,7 @@ requireComponents("ggj/")
 
 function love.update(dt)
     for _, scene in sceneLayers:eachInReverseDrawOrder() do
-        scene:update(dt, true)
+        scene:update(dt * TIMESCALE, true)
     end
 end
 

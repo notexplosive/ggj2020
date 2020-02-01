@@ -8,11 +8,16 @@ end
 
 function TakeSnapshot:awake()
     self.timer = 1
+    if not ALLOW_DEBUG then
+        self:destroy()
+    end
 end
 
 function TakeSnapshot:start()
-    debugLog("SNAPSHOT enabled")
-    self:takeSnapshot()
+    if ALLOW_DEBUG then
+        debugLog("SNAPSHOT enabled")
+        self:takeSnapshot()
+    end
 end
 
 function TakeSnapshot:update(dt)

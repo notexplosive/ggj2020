@@ -1,13 +1,12 @@
 {
-  "root": [],
+  "root": [["Viewport", 1]],
   "actors": [
     {
       "components": [
         ["DebugRenderer"],
         ["TakeSnapshot", 15],
         ["ToggleFrameFreezeMode"],
-        ["EnableDebug"],
-        ["ToggleEditMode"]
+        ["EnableDebug"]
       ]
     },
     {
@@ -41,6 +40,15 @@
         ["RightJustify"]
       ],
       "pos": [0, 480]
+    },
+    {
+      "components": [
+        ["BoundingBox", 220, 80],
+        ["Canvas"],
+        ["SceneRenderer", "time"],
+        ["RightJustify"]
+      ],
+      "pos": [0, 700]
     }
   ]
 }
