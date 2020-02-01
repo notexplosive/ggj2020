@@ -28,9 +28,12 @@ function MapRenderer:draw(x, y)
     love.graphics.rectangle("line", mapCanvas:xywh())
 
     for i, actor in gameScene:eachActorWith(Components.ShowOnMap) do
-        local x, y = (actor:pos() / maxBoundsEdge * minWidgetEdge):xy()
+        local x, y = (actor:pos() / maxBoundsEdge * minWidgetEdge + mapCanvas.pos):xy()
         local scale = 1 / maxBoundsEdge * minWidgetEdge
-        actor.ShowOnMap:drawMapIcon(x + mapCanvas:x(), y + mapCanvas:y(), scale)
+
+        x = clamp(x, mapCanvas:left(), mapCanvas:right())
+        y = clamp(y, mapCanvas:top(), mapCanvas:bottom())
+        actor.ShowOnMap:drawMapIcon(x, y, scale)
     end
 end
 

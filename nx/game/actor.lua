@@ -163,6 +163,7 @@ end
 
 -- Takes vector or (x,y)
 function Actor:move(displacement, y)
+    assert(displacement)
     if tonumber(displacement) then
         local x = displacement
         displacement = Vector.new(x, y)
