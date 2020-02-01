@@ -51,6 +51,15 @@
         ["SceneRenderer", "battery"]
       ]
     },
+    {
+      "components": [
+        ["PositionCenterX"],
+        ["TextRenderer", "RETURN TO SECTOR", 55, 10000, "center"],
+        ["PlayerRef"],
+        ["OutOfBoundsNotification"]
+      ],
+      "pos": [0, 300]
+    },
 
     {
       "components": [

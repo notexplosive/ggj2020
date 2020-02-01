@@ -10,7 +10,9 @@
     {
       "components": [
         ["SpriteRenderer", "temp-ship"],
+        ["SectorBoundsRef"],
         ["Velocity"],
+        ["StayWithinBounds"],
         ["Player"],
         ["TimeControlRef"],
         ["Inventory"],
