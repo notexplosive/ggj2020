@@ -17,12 +17,6 @@ function InvertThrusterCheckbox:awake()
     end
 end
 
-function InvertThrusterCheckbox:draw(x, y)
-end
-
-function InvertThrusterCheckbox:update(dt)
-end
-
 function InvertThrusterCheckbox:Checkbox_onStateChange(message)
     local state = self.actor.Checkbox.state
     local rPos = self.rCol:pos()

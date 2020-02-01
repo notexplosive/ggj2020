@@ -2,15 +2,6 @@ local HandleCollide = {}
 
 registerComponent(HandleCollide, "HandleCollide")
 
-function HandleCollide:setup()
-end
-
-function HandleCollide:awake()
-end
-
-function HandleCollide:draw(x, y)
-end
-
 function HandleCollide:update(dt)
     for _, actor1 in self.actor:scene():eachActorWith(Components.CollideRadius) do
         for _, actor2 in self.actor:scene():eachActorWith(Components.CollideRadius) do

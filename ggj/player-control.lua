@@ -65,4 +65,9 @@ function PlayerControl:setInputVal(key, value)
     self.inputState[key] = value
 end
 
+function PlayerControl:onCollide(other)
+    local vec = self.actor:pos() - other:pos()
+    self.actor.Velocity:set(vec:normalized() * vec:length())
+end
+
 return PlayerControl
