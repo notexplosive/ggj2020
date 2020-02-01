@@ -50,6 +50,10 @@
     {
       "components": [["Scrap"]],
       "pos": [510, 540]
+    },
+    {
+      "components": [["Stargate"]],
+      "pos": [-128, 64]
     }
   ]
 }
