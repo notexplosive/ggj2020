@@ -1,0 +1,19 @@
+{
+  "root": [
+    ["PositionCenterX"],
+    ["TextRenderer", "RESOURCES", 22, 100000, "center"],
+    ["SceneBorder"],
+    ["IndicatorBackground"]
+  ],
+  "actors": [
+    {
+      "components": [
+        ["PlayerRef"],
+        ["SpriteRenderer", "metal-gear", "all", 2],
+        ["TextRenderer", "0", 22, null, null, null, null, 16, -12],
+        ["ResourceIndicator"]
+      ],
+      "pos": [32, 48]
+    }
+  ]
+}

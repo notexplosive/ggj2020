@@ -8,8 +8,8 @@
     {
       "components": [
         ["BoundingBox", 128, 32],
-        ["BoundingBoxRenderer"],
         ["Hoverable"],
+        ["ButtonBorder"],
         ["Clickable"],
         ["NotifySceneOnClick", "max"],
         ["TextRenderer", "FULL", 12, null, null, null, null, 8, 8]
@@ -20,13 +20,13 @@
     {
       "components": [
         ["BoundingBox", 128, 32],
-        ["BoundingBoxRenderer"],
         ["Hoverable"],
+        ["ButtonBorder"],
         ["Clickable"],
         ["NotifySceneOnClick", "zero"],
         ["TextRenderer", "NONE", 12, null, null, null, null, 8, 8]
       ],
-      "pos": [42, 190]
+      "pos": [42, 194]
     },
     {
       "components": [

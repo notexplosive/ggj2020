@@ -12,6 +12,7 @@
         ["SpriteRenderer", "temp-ship"],
         ["Velocity"],
         ["Player"],
+        ["Inventory"],
         ["PlayerControl"],
         ["ShowOnMap", [0, 1, 0], 64],
         ["CollideRadius", 16]
@@ -34,6 +35,19 @@
         ["ShowOnMap", [1, 1, 0]]
       ],
       "pos": [1600, 520]
+    },
+
+    {
+      "components": [["Scrap"]],
+      "pos": [500, 500]
+    },
+    {
+      "components": [["Scrap"]],
+      "pos": [550, 520]
+    },
+    {
+      "components": [["Scrap"]],
+      "pos": [510, 540]
     }
   ]
 }

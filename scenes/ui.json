@@ -13,17 +13,13 @@
       "components": [["FramerateCounter"]]
     },
     {
-      "components": [["BoundingBox", 220, 220], ["BoundingBoxRenderer"]]
-    },
-    {
       "components": [["LayoutWidgets"]]
     },
     {
       "components": [
         ["BoundingBox", 220, 220],
         ["Canvas"],
-        ["SceneRenderer", "velocity"],
-        ["RightJustify"]
+        ["SceneRenderer", "velocity"]
       ]
     },
     {
@@ -38,8 +34,7 @@
       "components": [
         ["BoundingBox", 220, 220],
         ["Canvas"],
-        ["SceneRenderer", "map"],
-        ["RightJustify"]
+        ["SceneRenderer", "map"]
       ]
     },
     {
@@ -48,6 +43,13 @@
         ["Canvas"],
         ["SceneRenderer", "time"],
         ["RightJustify"]
+      ]
+    },
+    {
+      "components": [
+        ["BoundingBox", 220, 80],
+        ["Canvas"],
+        ["SceneRenderer", "resources"]
       ]
     }
   ]

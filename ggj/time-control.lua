@@ -16,7 +16,7 @@ end
 function TimeControl:update(dt)
     local enabled = self.actor.Checkbox.state
     if enabled then
-        TIMESCALE = 0.01
+        TIMESCALE = 0.1
     else
         TIMESCALE = 1
     end

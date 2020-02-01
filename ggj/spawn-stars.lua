@@ -22,7 +22,7 @@ function SpawnStars:update(dt)
     if player then
         local vel = player.Velocity:get() * dt
         for i, star in self.actor.Children:each() do
-            star:move(-vel / (100 * self.layer / 2))
+            star:move(-vel / (6 * self.layer / 2))
 
             local x, y = star:pos():xy()
             if x < 0 then
