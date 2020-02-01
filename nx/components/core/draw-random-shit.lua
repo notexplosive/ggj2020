@@ -1,6 +1,6 @@
 local DrawRandomShit = {}
 
-registerComponent(DrawRandomShit, "DrawRandomShit")
+registerComponent(DrawRandomShit, "DrawRandomShit", {"Canvas"})
 
 function DrawRandomShit:awake()
 end
@@ -8,7 +8,7 @@ end
 function DrawRandomShit:draw(x, y)
     if self.actor.Canvas then
         self.actor.Canvas:canvasDraw(
-            function(width,height)
+            function(width, height)
                 local x = width * love.math.random()
                 local y = height * love.math.random()
                 local r = 5 + love.math.random() * 20

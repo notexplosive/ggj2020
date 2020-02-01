@@ -4,16 +4,24 @@
   ],
   "actors": [{
       "components": [
-        ["Viewport", 2]
+        ["SpriteRenderer", "temp-ship"],
+        ["Velocity"],
+        ["Player"],
+        ["PlayerControl"]
+      ],
+      "pos": [200, 200]
+    },
+
+    {
+      "components": [
+        ["Viewport", 2],
+        ["CameraFollowPlayer"]
       ]
     },
     {
       "components": [
-        ["TriangleRenderer", 20],
-        ["Velocity"],
-        ["PlayerControl"]
-      ],
-      "pos": [200, 200]
+        ["SpawnRandomShit", 100, 1000, 1000]
+      ]
     }
   ]
 }
