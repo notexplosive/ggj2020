@@ -34,7 +34,9 @@ Test.runComponentTests()
 local Scene = require("nx/game/scene")
 uiScene = Scene.fromPath("ui")
 gameScene = Scene.fromPath("game")
+backgroundScene = Scene.fromPath("background")
 
+sceneLayers:add(backgroundScene)
 sceneLayers:add(gameScene)
 sceneLayers:add(uiScene)
 

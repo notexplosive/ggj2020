@@ -1,0 +1,11 @@
+{
+  "root": [],
+  "actors": [
+    {
+      "components": [["Viewport", 2]]
+    },
+    { "components": [["PlayerRef"], ["SpawnStars", 1]] },
+    { "components": [["PlayerRef"], ["SpawnStars", 2]] },
+    { "components": [["PlayerRef"], ["SpawnStars", 3]] }
+  ]
+}
