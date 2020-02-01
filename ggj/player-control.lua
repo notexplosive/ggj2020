@@ -5,7 +5,7 @@ registerComponent(PlayerControl, "PlayerControl", {"Velocity"})
 function PlayerControl:awake()
     self.inputState = {}
 
-    self.inputState.thrustLeft = true
+    self.inputState.thrustLeft = false
     self.inputState.thrustRight = false
 
     self.debrisTimer = 1
