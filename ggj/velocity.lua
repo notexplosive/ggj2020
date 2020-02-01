@@ -8,7 +8,7 @@ end
 
 function Velocity:awake()
     self.vec = Vector.new()
-    self.terminalSpeed = 50
+    self.terminalSpeed = 256
 end
 
 function Velocity:update(dt)
@@ -27,7 +27,7 @@ function Velocity:set(v, y)
     self.vec = Vector.new(v, y)
     local length = self.vec:length()
     if length > self.terminalSpeed then
-        self.vec = self.vec:normalized() * length
+        self.vec = self.vec:normalized() * self.terminalSpeed
     end
 end
 

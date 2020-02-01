@@ -7,6 +7,8 @@ function SpriteRenderer:setup(spriteName, anim, scale, color, offx, offy)
     assert(spriteName, "Sprite name cannot be nil")
     assert(Assets.images[spriteName], "No sprite named " .. spriteName)
 
+    self.spriteName = spriteName
+
     self:setSprite(Assets.images[spriteName])
 
     if anim then
@@ -28,6 +30,10 @@ function SpriteRenderer:setup(spriteName, anim, scale, color, offx, offy)
             self.sprite.gridHeight * self:getScaleY() / 2
         )
     end
+end
+
+function SpriteRenderer:reverseSetup()
+    return self.spriteName, self.currentAnimation, self.scale, copyList(self.color), self.offset.x, self.offset.y
 end
 
 function SpriteRenderer:awake()

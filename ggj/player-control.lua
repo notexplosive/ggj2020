@@ -45,10 +45,15 @@ end
 function PlayerControl:dropDebris()
     if self.debrisTimer < 0 then
         local actor = self.actor:scene():addActor()
-        actor:setPos(self.actor:pos() - self.actor.Velocity:get():normalized():setAngle(self.actor:angle()) * 32)
-        actor:addComponent(Components.CircleRenderer, 5)
+        --actor:setPos(self.actor:pos() - self.actor.Velocity:get():normalized():setAngle(self.actor:angle()) * 32)
+        actor:setPos(self.actor:pos())
+        --actor:addComponent(Components.CircleRenderer, 5)
+        actor:addComponent(Components.SpriteRenderer, self.actor.SpriteRenderer:reverseSetup())
+        actor:setAngle(self.actor:angle())
         actor:addComponent(Components.Lifetime, 1)
-        self.debrisTimer = 60
+        actor:addComponent(Components.FadeOutWithLifetime, 0.25)
+        actor:scene():sendToBack(actor)
+        self.debrisTimer = 30
     end
 end
 
