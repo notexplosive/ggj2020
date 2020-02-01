@@ -17,25 +17,25 @@ function PlayerControl:update(dt)
     local vec = velocity:get()
     local angle = self.actor:angle()
 
-    local thrust = Vector.new(1, 0)
+    local thrust = Vector.newPolar(1, self.actor:angle())
     local tilt = 2.5 * dt
 
     self.debrisTimer = self.debrisTimer - vec:length() * dt
 
     if self.inputState.thrustLeft > 0 then
-        vec = vec + thrust:clone():setAngle(angle - tilt * 2) * self.inputState.thrustLeft / 2
+        vec = vec + thrust * self.inputState.thrustLeft / 2
         angle = angle - tilt * self.inputState.thrustLeft / 2
         self:dropDebris()
     end
 
     if self.inputState.thrustRight > 0 then
-        vec = vec + thrust:clone():setAngle(angle + tilt * 2) * self.inputState.thrustRight / 2
+        vec = vec + thrust * self.inputState.thrustRight / 2
         angle = angle + tilt * self.inputState.thrustRight / 2
         self:dropDebris()
     end
 
     if self.inputState.thrustMiddle > 0 then
-        vec = vec + thrust:clone():setAngle(angle) * self.inputState.thrustMiddle / 6
+        vec = vec + thrust * self.inputState.thrustMiddle / 6
         self:dropDebris()
     end
 
