@@ -9,7 +9,7 @@ function PositionCenterX:awake()
 end
 
 function PositionCenterX:update(dt)
-    self.actor:setPos(self.actor:scene().width / 2, 0)
+    self.actor:setPos(self.actor:scene().width / 2, self.actor:pos().y)
 end
 
 return PositionCenterX
