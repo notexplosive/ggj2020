@@ -37,3 +37,5 @@ gameScene = Scene.fromPath("game")
 
 sceneLayers:add(gameScene)
 sceneLayers:add(uiScene)
+
+love.graphics.setBackgroundColor(59 / 256, 20 / 256, 67 / 256, 1)
