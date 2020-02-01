@@ -1,22 +1,45 @@
 {
-    "root": [
-        ["PositionCenterX"],
-        ["TextRenderer", "THRUSTERS", 22, 100000, "center"],
-        ["SceneBorder"]
-    ],
-    "actors": [{
-            "components": [
-                ["PlayerRef"],
-                ["CreateCheckboxColumn", 5, "thrustLeft"]
-            ],
-            "pos": [32, 40]
-        },
-        {
-            "components": [
-                ["PlayerRef"],
-                ["CreateCheckboxColumn", 5, "thrustRight"]
-            ],
-            "pos": [64, 40]
-        }
-    ]
+  "root": [
+    ["PositionCenterX"],
+    ["TextRenderer", "THRUSTERS", 22, 100000, "center"],
+    ["SceneBorder"]
+  ],
+  "actors": [
+    {
+      "components": [
+        ["BoundingBox", 128, 32],
+        ["BoundingBoxRenderer"],
+        ["Hoverable"],
+        ["Clickable"],
+        ["NotifySceneOnClick", "max"]
+      ],
+      "pos": [32, 32]
+    },
+
+    {
+      "components": [
+        ["BoundingBox", 128, 32],
+        ["BoundingBoxRenderer"],
+        ["Hoverable"],
+        ["Clickable"],
+        ["NotifySceneOnClick", "zero"]
+      ],
+      "pos": [32, 180]
+    },
+    {
+      "components": [["PlayerRef"], ["CreateCheckboxColumn", 3, "thrustLeft"]],
+      "pos": [32, 74]
+    },
+    {
+      "components": [["PlayerRef"], ["CreateCheckboxColumn", 3, "thrustRight"]],
+      "pos": [128, 74]
+    },
+    {
+      "components": [
+        ["PlayerRef"],
+        ["CreateCheckboxColumn", 3, "thrustMiddle"]
+      ],
+      "pos": [80, 74]
+    }
+  ]
 }

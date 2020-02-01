@@ -37,5 +37,3 @@ gameScene = Scene.fromPath("game")
 
 sceneLayers:add(gameScene)
 sceneLayers:add(uiScene)
-
-widgetFont = love.graphics.newFont(18)

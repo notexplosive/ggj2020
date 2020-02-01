@@ -1,8 +1,10 @@
 {
-  "root": [
-    ["CloseOnEscape"]
-  ],
-  "actors": [{
+  "root": [["CloseOnEscape"]],
+  "actors": [
+    {
+      "components": [["Viewport", 2], ["CameraFollowPlayer"]]
+    },
+    {
       "components": [
         ["SpriteRenderer", "temp-ship"],
         ["Velocity"],
@@ -12,16 +14,10 @@
       "pos": [200, 200]
     },
 
+    { "components": [["CircleRenderer", 200]], "pos": [800, 200] },
+
     {
-      "components": [
-        ["Viewport", 2],
-        ["CameraFollowPlayer"]
-      ]
-    },
-    {
-      "components": [
-        ["SpawnRandomShit", 100, 1000, 1000]
-      ]
+      "components": [["SpawnRandomShit", 100, 1000, 1000]]
     }
   ]
 }

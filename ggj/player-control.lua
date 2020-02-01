@@ -7,6 +7,7 @@ function PlayerControl:awake()
 
     self.inputState.thrustLeft = 0
     self.inputState.thrustRight = 0
+    self.inputState.thrustMiddle = 0
 
     self.debrisTimer = 1
 end
@@ -22,21 +23,26 @@ function PlayerControl:update(dt)
     self.debrisTimer = self.debrisTimer - vec:length() * dt
 
     if self.inputState.thrustLeft > 0 then
-        vec = vec + thrust:clone():setAngle(angle - tilt * 2) * self.inputState.thrustLeft
-        angle = angle - tilt
+        vec = vec + thrust:clone():setAngle(angle - tilt * 2) * self.inputState.thrustLeft / 2
+        angle = angle - tilt * self.inputState.thrustLeft / 2
         self:dropDebris()
     end
 
     if self.inputState.thrustRight > 0 then
-        vec = vec + thrust:clone():setAngle(angle + tilt * 2) * self.inputState.thrustRight
-        angle = angle + tilt
+        vec = vec + thrust:clone():setAngle(angle + tilt * 2) * self.inputState.thrustRight / 2
+        angle = angle + tilt * self.inputState.thrustRight / 2
         self:dropDebris()
     end
 
+    if self.inputState.thrustMiddle > 0 then
+        vec = vec + thrust:clone():setAngle(angle) * self.inputState.thrustMiddle / 6
+        self:dropDebris()
+    end
+
+    self:dropDebris()
+
     self.actor:setAngle(angle)
     velocity:set(vec)
-
-    --debugLog(unpack(getKeys(self.inputState)))
 end
 
 function PlayerControl:dropDebris()
@@ -50,7 +56,7 @@ function PlayerControl:dropDebris()
         actor:addComponent(Components.Lifetime, 1)
         actor:addComponent(Components.FadeOutWithLifetime, 0.25)
         actor:scene():sendToBack(actor)
-        self.debrisTimer = 30
+        self.debrisTimer = 15
     end
 end
 
