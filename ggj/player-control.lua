@@ -70,4 +70,8 @@ function PlayerControl:onCollide(other)
     self.actor.Velocity:set(vec:normalized() * vec:length())
 end
 
+function PlayerControl:getBatteryUsage()
+    return (self.inputState.thrustLeft + self.inputState.thrustRight + self.inputState.thrustMiddle) * 2
+end
+
 return PlayerControl

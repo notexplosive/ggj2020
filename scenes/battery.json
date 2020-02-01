@@ -1,0 +1,18 @@
+{
+  "root": [
+    ["PositionCenterX"],
+    ["TextRenderer", "BATTERY", 22, 100000, "center"],
+    ["SceneBorder"],
+    ["IndicatorBackground"]
+  ],
+  "actors": [
+    {
+      "components": [
+        ["PlayerRef"],
+        ["TextRenderer", "0", 22, null, null, null, null, 16, -12],
+        ["BatteryIndicator"]
+      ],
+      "pos": [32, 48]
+    }
+  ]
+}

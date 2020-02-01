@@ -2,14 +2,6 @@
   "root": [],
   "actors": [
     {
-      "components": [
-        ["DebugRenderer"],
-        ["TakeSnapshot", 15],
-        ["ToggleFrameFreezeMode"],
-        ["EnableDebug"]
-      ]
-    },
-    {
       "components": [["FramerateCounter"]]
     },
     {
@@ -50,6 +42,22 @@
         ["BoundingBox", 220, 80],
         ["Canvas"],
         ["SceneRenderer", "resources"]
+      ]
+    },
+    {
+      "components": [
+        ["BoundingBox", 220, 80],
+        ["Canvas"],
+        ["SceneRenderer", "battery"]
+      ]
+    },
+
+    {
+      "components": [
+        ["DebugRenderer"],
+        ["TakeSnapshot", 15],
+        ["ToggleFrameFreezeMode"],
+        ["EnableDebug"]
       ]
     }
   ]
