@@ -15,6 +15,10 @@ function Velocity:update(dt)
     self.actor:move(self.vec * dt)
 end
 
+function Velocity:getTerminalSpeed()
+    return self.terminalSpeed
+end
+
 function Velocity:get()
     return self.vec:clone()
 end

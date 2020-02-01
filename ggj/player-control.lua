@@ -25,13 +25,13 @@ function PlayerControl:update(dt)
     self.debrisTimer = self.debrisTimer - vec:length() * dt
 
     if self.inputState.thrustLeft then
-        vec = vec + thrust:clone():setAngle(angle - tilt)
+        vec = vec + thrust:clone():setAngle(angle - tilt * 2)
         angle = angle - tilt
         self:dropDebris()
     end
 
     if self.inputState.thrustRight then
-        vec = vec + thrust:clone():setAngle(angle + tilt)
+        vec = vec + thrust:clone():setAngle(angle + tilt * 2)
         angle = angle + tilt
         self:dropDebris()
     end

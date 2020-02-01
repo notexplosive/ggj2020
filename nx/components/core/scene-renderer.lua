@@ -22,7 +22,7 @@ end
 
 function SceneRenderer:awake()
     self.scene = Scene.new(self.actor.Canvas:getDimensions())
-    self.backgroundColor = {200 / 255, 200 / 255, 180 / 255, 1}
+    self.backgroundColor = {0, 0, 0.5, 1}
 end
 
 function SceneRenderer:draw(x, y)
@@ -151,13 +151,13 @@ end
 -- fenestra hack
 Scene:createEvent("onMinimize", {"becameVisible"})
 function SceneRenderer:onMinimize(becameVisible)
-    self.scene:onMinimize(becameVisible)
+    --self.scene:onMinimize(becameVisible)
 end
 -- /fenestra hack
 
 -- fenestra hack, as well as its usages
 function SceneRenderer:isInFocus()
-    return self.actor.WindowExternal:isInFocus()
+    --return self.actor.WindowExternal:isInFocus()
 end
 -- /fenestra hack
 
