@@ -12,7 +12,7 @@ function VelocityIndicator:draw(x, y)
         local vec = velocity:get()
         local terminal = velocity:getTerminalSpeed()
         local percentVec = vec / terminal
-        local radius = self.actor:scene().width / 2
+        local radius = self.actor:scene().width / 3
 
         love.graphics.setColor(1, 1, 1, 1)
         local centerPos = Vector.new(self.actor:scene().width / 2, self.actor:scene().height / 2)

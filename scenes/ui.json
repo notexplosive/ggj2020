@@ -27,6 +27,14 @@
         ["SceneRenderer", "velocity"],
         ["RightJustify"]
       ]
+    },
+    {
+      "components": [
+        ["BoundingBox", 220, 220],
+        ["Canvas"],
+        ["SceneRenderer", "velocity"],
+        ["RightJustify"]
+      ]
     }
   ]
 }
