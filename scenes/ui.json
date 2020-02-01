@@ -1,5 +1,5 @@
 {
-  "root": [["Viewport", 1]],
+  "root": [],
   "actors": [
     {
       "components": [
@@ -16,6 +16,9 @@
       "components": [["BoundingBox", 220, 220], ["BoundingBoxRenderer"]]
     },
     {
+      "components": [["LayoutWidgets"]]
+    },
+    {
       "components": [
         ["BoundingBox", 220, 220],
         ["Canvas"],
@@ -29,8 +32,7 @@
         ["Canvas"],
         ["SceneRenderer", "thrusters"],
         ["RightJustify"]
-      ],
-      "pos": [0, 220]
+      ]
     },
     {
       "components": [
@@ -38,8 +40,7 @@
         ["Canvas"],
         ["SceneRenderer", "map"],
         ["RightJustify"]
-      ],
-      "pos": [0, 480]
+      ]
     },
     {
       "components": [
@@ -47,8 +48,7 @@
         ["Canvas"],
         ["SceneRenderer", "time"],
         ["RightJustify"]
-      ],
-      "pos": [0, 700]
+      ]
     }
   ]
 }

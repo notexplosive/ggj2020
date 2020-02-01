@@ -9,7 +9,7 @@ function RightJustify:awake()
 end
 
 function RightJustify:update(dt)
-    self.actor:setPos(self.actor:scene().width - self.actor.BoundingBox:width(), self.actor:pos().y)
+    self.actor:setPos(love.graphics.getWidth() - self.actor.BoundingBox:width(), self.actor:pos().y)
 end
 
 return RightJustify
