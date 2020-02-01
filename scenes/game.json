@@ -12,8 +12,10 @@
         ["SpriteRenderer", "temp-ship"],
         ["Velocity"],
         ["Player"],
+        ["TimeControlRef"],
         ["Inventory"],
         ["PlayerControl"],
+        ["Battery", 100],
         ["ShowOnMap", [0, 1, 0], 64],
         ["CollideRadius", 16]
       ],

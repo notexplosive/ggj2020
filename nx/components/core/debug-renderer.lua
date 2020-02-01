@@ -28,9 +28,9 @@ function DebugRenderer:draw(x, y)
 
     for i, str in ipairs(copyReversed(self.content)) do
         love.graphics.setColor(0.1, 0.1, 0.1, self.opacity)
-        love.graphics.print(str, x + 1, y - (i - 1) * fontHeight + 1)
+        love.graphics.print(str, x + 1 + 256, y - (i - 1) * fontHeight + 1)
         love.graphics.setColor(1, 1, 1, self.opacity)
-        love.graphics.print(str, x, y - (i - 1) * fontHeight)
+        love.graphics.print(str, x + 256, y - (i - 1) * fontHeight)
     end
 
     self.actor:setPos(0, self.actor:scene().height / 2 - fontHeight)
