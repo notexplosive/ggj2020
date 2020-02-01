@@ -16,7 +16,6 @@ local sceneLayers = require("nx/scene-layers")
 require("nx/component-registry")
 requireComponents("ggj/")
 
-
 function love.update(dt)
     for _, scene in sceneLayers:eachInReverseDrawOrder() do
         scene:update(dt, true)
@@ -38,5 +37,3 @@ gameScene = Scene.fromPath("game")
 
 sceneLayers:add(gameScene)
 sceneLayers:add(uiScene)
-
-love.graphics.setBackgroundColor(0 / 255, 127 / 255, 255 / 255)
