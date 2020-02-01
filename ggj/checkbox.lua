@@ -21,10 +21,18 @@ function Checkbox:draw(x, y)
     love.graphics.setColor(1, 1, 1, 1)
 
     if self.state then
-        love.graphics.circle("fill", x, y, 8)
+        if self._hover then
+            love.graphics.circle("fill", x, y, 10)
+        else
+            love.graphics.circle("fill", x, y, 8)
+        end
     end
 
     love.graphics.circle("line", x, y, 14)
+
+    if self._hover then
+        love.graphics.circle("fill", x, y, 5)
+    end
 end
 
 function Checkbox:Clickable_onClickOn()
@@ -33,6 +41,14 @@ function Checkbox:Clickable_onClickOn()
     if self.actor.Parent then
         self.actor.Parent:get():callForAllComponents("Checkbox_onStateChange", self.message)
     end
+end
+
+function Checkbox:Hoverable_onHover()
+    self._hover = true
+end
+
+function Checkbox:Hoverable_onHoverEnd()
+    self._hover = false
 end
 
 return Checkbox

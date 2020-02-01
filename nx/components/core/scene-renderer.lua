@@ -17,6 +17,7 @@ function SceneRenderer:setup(pathOrScene, args)
         self.scene = pathOrScene
     end
 
+    self.scene.sceneRenderer = self
     self.scene:setDimensions(self.actor.Canvas:getDimensions())
 end
 

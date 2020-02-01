@@ -1,6 +1,7 @@
 {
   "root": [],
-  "actors": [{
+  "actors": [
+    {
       "components": [
         ["DebugRenderer"],
         ["TakeSnapshot", 15],
@@ -10,15 +11,10 @@
       ]
     },
     {
-      "components": [
-        ["FramerateCounter"]
-      ]
+      "components": [["FramerateCounter"]]
     },
     {
-      "components": [
-        ["BoundingBox", 220, 220],
-        ["BoundingBoxRenderer"]
-      ]
+      "components": [["BoundingBox", 220, 220], ["BoundingBoxRenderer"]]
     },
     {
       "components": [
@@ -36,6 +32,15 @@
         ["RightJustify"]
       ],
       "pos": [0, 220]
+    },
+    {
+      "components": [
+        ["BoundingBox", 220, 220],
+        ["Canvas"],
+        ["SceneRenderer", "map"],
+        ["RightJustify"]
+      ],
+      "pos": [0, 480]
     }
   ]
 }

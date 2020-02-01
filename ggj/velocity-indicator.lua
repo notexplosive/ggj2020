@@ -2,7 +2,8 @@ local VelocityIndicator = {}
 
 registerComponent(VelocityIndicator, "VelocityIndicator", {"PlayerRef"})
 
-function VelocityIndicator:awake()
+function VelocityIndicator:start()
+    self.actor:scene().sceneRenderer.backgroundColor = {0, 0.25, 0}
 end
 
 function VelocityIndicator:draw(x, y)

@@ -5,27 +5,33 @@
       "components": [["Viewport", 2], ["CameraFollowPlayer"]]
     },
     {
+      "components": [["SectorBounds", 1920, 1080]]
+    },
+    {
       "components": [
         ["SpriteRenderer", "temp-ship"],
         ["Velocity"],
         ["Player"],
         ["PlayerControl"],
+        ["ShowOnMap"],
         ["CollideRadius", 16]
       ],
-      "pos": [200, 200]
+      "pos": [200, 520]
     },
 
     {
       "components": [
         ["CircleRenderer", 200],
-        ["CollideRadius", 200]
+        ["CollideRadius", 200],
+        ["ShowOnMap", [1, 1, 0], 200]
       ],
       "pos": [800, 200]
     },
     {
       "components": [
         ["CircleRenderer", 200],
-        ["CollideRadius", 200]
+        ["CollideRadius", 200],
+        ["ShowOnMap", [1, 1, 0], 200]
       ],
       "pos": [1600, 200]
     },
