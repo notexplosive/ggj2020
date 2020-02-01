@@ -30,11 +30,12 @@
     },
     {
       "components": [
-        ["BoundingBox", 220, 220],
+        ["BoundingBox", 220, 260],
         ["Canvas"],
-        ["SceneRenderer", "velocity"],
+        ["SceneRenderer", "thrusters"],
         ["RightJustify"]
-      ]
+      ],
+      "pos": [0, 220]
     }
   ]
 }

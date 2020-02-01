@@ -1,0 +1,22 @@
+{
+    "root": [
+        ["PositionCenterX"],
+        ["TextRenderer", "THRUSTERS", 22, 100000, "center"],
+        ["SceneBorder"]
+    ],
+    "actors": [{
+            "components": [
+                ["PlayerRef"],
+                ["CreateCheckboxColumn", 5, "thrustLeft"]
+            ],
+            "pos": [32, 40]
+        },
+        {
+            "components": [
+                ["PlayerRef"],
+                ["CreateCheckboxColumn", 5, "thrustRight"]
+            ],
+            "pos": [64, 40]
+        }
+    ]
+}

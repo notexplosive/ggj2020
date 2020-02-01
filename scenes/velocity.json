@@ -1,13 +1,12 @@
 {
-    "root": [
-        ["PositionCenterX"],
-        ["TextRenderer", "VELOCITY", 22, 100000, "center"],
-        ["SceneBorder"]
-    ],
-    "actors": [{
-        "components": [
-            ["PlayerRef"],
-            ["VelocityIndicator"]
-        ]
-    }]
+  "root": [
+    ["PositionCenterX"],
+    ["TextRenderer", "VELOCITY", 22, 100000, "center"],
+    ["SceneBorder"]
+  ],
+  "actors": [
+    {
+      "components": [["PlayerRef"], ["VelocityIndicator"]]
+    }
+  ]
 }

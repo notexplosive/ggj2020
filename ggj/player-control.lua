@@ -5,8 +5,8 @@ registerComponent(PlayerControl, "PlayerControl", {"Velocity"})
 function PlayerControl:awake()
     self.inputState = {}
 
-    self.inputState.thrustLeft = false
-    self.inputState.thrustRight = false
+    self.inputState.thrustLeft = 0
+    self.inputState.thrustRight = 0
 
     self.debrisTimer = 1
 end
@@ -16,22 +16,19 @@ function PlayerControl:update(dt)
     local vec = velocity:get()
     local angle = self.actor:angle()
 
-    self.inputState.thrustLeft = love.keyboard.isDown("left")
-    self.inputState.thrustRight = love.keyboard.isDown("right")
-
     local thrust = Vector.new(1, 0)
     local tilt = 2.5 * dt
 
     self.debrisTimer = self.debrisTimer - vec:length() * dt
 
-    if self.inputState.thrustLeft then
-        vec = vec + thrust:clone():setAngle(angle - tilt * 2)
+    if self.inputState.thrustLeft > 0 then
+        vec = vec + thrust:clone():setAngle(angle - tilt * 2) * self.inputState.thrustLeft
         angle = angle - tilt
         self:dropDebris()
     end
 
-    if self.inputState.thrustRight then
-        vec = vec + thrust:clone():setAngle(angle + tilt * 2)
+    if self.inputState.thrustRight > 0 then
+        vec = vec + thrust:clone():setAngle(angle + tilt * 2) * self.inputState.thrustRight
         angle = angle + tilt
         self:dropDebris()
     end
@@ -55,6 +52,11 @@ function PlayerControl:dropDebris()
         actor:scene():sendToBack(actor)
         self.debrisTimer = 30
     end
+end
+
+function PlayerControl:setInputVal(key, value)
+    assert(indexOf(getKeys(self.inputState), key))
+    self.inputState[key] = value
 end
 
 return PlayerControl
