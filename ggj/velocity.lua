@@ -8,7 +8,7 @@ end
 
 function Velocity:awake()
     self.vec = Vector.new()
-    self.terminalSpeed = 128
+    self.terminalSpeed = 256
 end
 
 function Velocity:update(dt)
