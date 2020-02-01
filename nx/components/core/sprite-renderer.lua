@@ -147,6 +147,10 @@ function SpriteRenderer:isPlaying()
     return self.actor.PlayHead:playing()
 end
 
+function SpriteRenderer:setFps(fps)
+    self.actor.AnimationFrameTracker:setFps(fps)
+end
+
 function SpriteRenderer:getBoundingBox()
     local _, _, width, height = self.sprite:getQuadAt(1):getViewport()
     local w = self.scale * self.scaleX * width
