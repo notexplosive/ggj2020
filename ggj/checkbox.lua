@@ -2,9 +2,12 @@ local Checkbox = {}
 
 registerComponent(Checkbox, "Checkbox")
 
-function Checkbox:setup(state, message)
+function Checkbox:setup(state, message, label)
     self.state = state
     self.message = message
+    if label then
+        self.actor:addComponent(Components.TextRenderer, label, 12, nil, nil, nil, nil, 0, -12)
+    end
 end
 
 function Checkbox:awake()
@@ -26,6 +29,7 @@ end
 
 function Checkbox:Clickable_onClickOn()
     self.state = not self.state
+    self.actor:callForAllComponents("Checkbox_onStateChange", self.message)
     if self.actor.Parent then
         self.actor.Parent:get():callForAllComponents("Checkbox_onStateChange", self.message)
     end

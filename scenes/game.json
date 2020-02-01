@@ -1,5 +1,5 @@
 {
-  "root": [["CloseOnEscape"]],
+  "root": [["CloseOnEscape"], ["HandleCollide"]],
   "actors": [
     {
       "components": [["Viewport", 2], ["CameraFollowPlayer"]]
@@ -9,12 +9,26 @@
         ["SpriteRenderer", "temp-ship"],
         ["Velocity"],
         ["Player"],
-        ["PlayerControl"]
+        ["PlayerControl"],
+        ["CollideRadius", 16]
       ],
       "pos": [200, 200]
     },
 
-    { "components": [["CircleRenderer", 200]], "pos": [800, 200] },
+    {
+      "components": [
+        ["CircleRenderer", 200],
+        ["CollideRadius", 200]
+      ],
+      "pos": [800, 200]
+    },
+    {
+      "components": [
+        ["CircleRenderer", 200],
+        ["CollideRadius", 200]
+      ],
+      "pos": [1600, 200]
+    },
 
     {
       "components": [["SpawnRandomShit", 100, 1000, 1000]]

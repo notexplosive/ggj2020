@@ -11,9 +11,10 @@
         ["BoundingBoxRenderer"],
         ["Hoverable"],
         ["Clickable"],
-        ["NotifySceneOnClick", "max"]
+        ["NotifySceneOnClick", "max"],
+        ["TextRenderer", "FULL", 12, null, null, null, null, 8, 8]
       ],
-      "pos": [32, 32]
+      "pos": [42, 42]
     },
 
     {
@@ -22,24 +23,38 @@
         ["BoundingBoxRenderer"],
         ["Hoverable"],
         ["Clickable"],
-        ["NotifySceneOnClick", "zero"]
+        ["NotifySceneOnClick", "zero"],
+        ["TextRenderer", "NONE", 12, null, null, null, null, 8, 8]
       ],
-      "pos": [32, 180]
-    },
-    {
-      "components": [["PlayerRef"], ["CreateCheckboxColumn", 3, "thrustLeft"]],
-      "pos": [32, 74]
-    },
-    {
-      "components": [["PlayerRef"], ["CreateCheckboxColumn", 3, "thrustRight"]],
-      "pos": [128, 74]
+      "pos": [42, 190]
     },
     {
       "components": [
         ["PlayerRef"],
-        ["CreateCheckboxColumn", 3, "thrustMiddle"]
+        ["CreateCheckboxColumn", 3, "thrustLeft", "L"]
       ],
-      "pos": [80, 74]
+      "pos": [42, 94]
+    },
+    {
+      "components": [
+        ["PlayerRef"],
+        ["CreateCheckboxColumn", 3, "thrustRight", "R"]
+      ],
+      "pos": [138, 94]
+    },
+    {
+      "components": [
+        ["PlayerRef"],
+        ["CreateCheckboxColumn", 3, "thrustMiddle", "M"]
+      ],
+      "pos": [90, 94]
+    },
+    {
+      "components": [
+        ["Checkbox", false, "ignore-this", "Invert"],
+        ["InvertThrusterCheckbox"]
+      ],
+      "pos": [4, 222]
     }
   ]
 }

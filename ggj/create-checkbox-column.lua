@@ -2,7 +2,7 @@ local CreateCheckboxColumn = {}
 
 registerComponent(CreateCheckboxColumn, "CreateCheckboxColumn", {"PlayerRef"})
 
-function CreateCheckboxColumn:setup(count, playerControlValue)
+function CreateCheckboxColumn:setup(count, playerControlValue, label)
     local scene = self.actor:scene()
     local total = count - 1
     for i = 0, total do
@@ -11,11 +11,14 @@ function CreateCheckboxColumn:setup(count, playerControlValue)
         local startingState = false or message == 0
         checkbox:addComponent(Components.Parent, self.actor)
         checkbox:addComponent(Components.Checkbox, startingState, message)
-        checkbox:setPos(self.actor:pos() + Vector.new(0, i * checkbox.BoundingBox:height()))
+        checkbox:addComponent(Components.AffixPos, self.actor, Vector.new(0, i * checkbox.BoundingBox:height()))
     end
 
     self.max = count
     self.playerControlValue = playerControlValue
+
+    local tx = self.actor:addComponent(Components.TextRenderer, label, 14, 10000, "center")
+    tx.offset = Vector.new(16, -15)
 end
 
 function CreateCheckboxColumn:Checkbox_onStateChange(message)

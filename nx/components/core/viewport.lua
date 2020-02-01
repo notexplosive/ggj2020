@@ -18,7 +18,7 @@ end
 function Viewport:draw(x, y)
     if DEBUG then
         love.graphics.setColor(1, 1, 0, 1, 1)
-        love.graphics.rectangle("line", self.actor.BoundingBox:getRect():inflate(-5, -5):xywh())
+    --love.graphics.rectangle("line", self.actor.BoundingBox:getRect():inflate(-5, -5):xywh())
     end
 end
 
