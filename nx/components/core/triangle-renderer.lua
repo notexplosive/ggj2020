@@ -13,7 +13,7 @@ end
 
 function TriangleRenderer:draw(x, y)
     local pos = Vector.new(x, y)
-    local angle = self.actor:angle() - math.pi / 2
+    local angle = self.actor:angle()
     local v = -Vector.newPolar(self.size, angle)
     local bottom = v + pos
     local top = Vector.newPolar(self.size, angle) + pos

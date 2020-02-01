@@ -1,20 +1,19 @@
 {
-  "root": [["CloseOnEscape"]],
-  "actors": [
-    {
-      "components": [["Viewport", 2]]
+  "root": [
+    ["CloseOnEscape"]
+  ],
+  "actors": [{
+      "components": [
+        ["Viewport", 2]
+      ]
     },
     {
-      "components": [["TriangleRenderer", 20], ["RotateTowardsMouse"]],
+      "components": [
+        ["TriangleRenderer", 20],
+        ["Velocity"],
+        ["PlayerControl"]
+      ],
       "pos": [200, 200]
-    },
-    {
-      "components": [["CircleRenderer", 20]],
-      "pos": [300, 200]
-    },
-    {
-      "components": [["RectRenderer", 40, 40], ["RandomRotate"]],
-      "pos": [400, 200]
     }
   ]
 }
