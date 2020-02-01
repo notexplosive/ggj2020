@@ -1,0 +1,16 @@
+{
+  "root": [
+    ["PositionCenterX"],
+    ["TextRenderer", "CHRONOSTASIS", 22, 100000, "center"],
+    ["SceneBorder"]
+  ],
+  "actors": [
+    {
+      "components": [
+        ["Checkbox", false, "ignore-this", "enable"],
+        ["TimeControl"]
+      ],
+      "pos": [78, 40]
+    }
+  ]
+}

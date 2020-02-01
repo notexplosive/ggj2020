@@ -7,8 +7,10 @@ function CollideRadius:setup(radius)
 end
 
 function CollideRadius:draw(x, y)
-    love.graphics.setColor(1, 1, 0)
-    love.graphics.circle("line", x, y, self.radius)
+    if ALLOW_DEBUG then
+        love.graphics.setColor(1, 1, 0)
+        love.graphics.circle("line", x, y, self.radius)
+    end
 end
 
 function CollideRadius:get()
