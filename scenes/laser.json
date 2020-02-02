@@ -7,11 +7,23 @@
   "actors": [
     {
       "components": [
+        ["BoundingBox", 80, 32],
         ["PlayerRef"],
-        ["Checkbox", false, "ignore-this", "fire"],
+        ["Hoverable"],
+        ["ButtonBorder"],
+        ["Clickable"],
+        ["LaserButton"],
+        ["TextRenderer", "FIRE", 12, null, null, null, null, 8, 8]
+      ],
+      "pos": [120, 40]
+    },
+    {
+      "components": [
+        ["PlayerRef"],
+        ["Checkbox", false, "ignore-this", "autofire"],
         ["LaserControl"]
       ],
-      "pos": [78, 40]
+      "pos": [32, 40]
     }
   ]
 }
