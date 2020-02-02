@@ -35,6 +35,7 @@ function Battery:calculateUsage()
     local solarPower = 10
     return self.actor.PlayerControl:getBatteryUsage() + self.actor.TimeControlRef:getBatteryUsage() +
         self.actor.Laser:getBatteryUsage() +
+        self.actor.Nitro:getBatteryUsage() +
         widgetUsage -
         solarPower
 end

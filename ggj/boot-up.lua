@@ -12,6 +12,9 @@ function BootUp:draw(x, y)
     love.graphics.rectangle("line", self.actor.BoundingBox:getRect():xywh())
     local x, y, w, h = self.actor.BoundingBox:getRect():xywh()
     local percent = self.progress / 3
+    if ALLOW_DEBUG then
+        percent = self.progress / 0.1
+    end
     love.graphics.rectangle("fill", x, y, w * percent, h)
     if percent > 1 then
         self.actor:scene():destroyAllActors()

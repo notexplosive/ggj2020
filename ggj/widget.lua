@@ -113,4 +113,10 @@ function Widget:onDisable()
     end
 end
 
+function Widget:onKeyPress(key, scancode, wasRelease)
+    if key == "p" and wasRelease then
+        self:disable()
+    end
+end
+
 return Widget

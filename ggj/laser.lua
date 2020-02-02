@@ -21,7 +21,10 @@ function Laser:update(dt)
             self.fireTimer = 0.1
             local shot = self.actor:scene():addActor()
             shot:setPos(self.actor:pos() + Vector.newPolar(16, self.actor:angle()))
-            shot:addComponent(Components.Velocity, Vector.newPolar(700, self.actor:angle()))
+            shot:addComponent(
+                Components.Velocity,
+                Vector.newPolar(700 + self.actor.Velocity:get():length(), self.actor:angle())
+            )
             shot:addComponent(Components.CircleRenderer, 5, {1, 0, 0})
             shot:addComponent(Components.LaserBullet, self.actor)
         end
