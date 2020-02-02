@@ -4,7 +4,7 @@ registerComponent(CloseOnEscape, "CloseOnEscape")
 
 function CloseOnEscape:onKeyPress(key)
     if key == "r" then
-        startGame()
+        loadLevel("game")
     end
 end
 

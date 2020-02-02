@@ -1,5 +1,5 @@
 {
-  "root": [],
+  "root": [["CloseOnEscape"]],
   "actors": [
     {
       "components": [["FramerateCounter"]]

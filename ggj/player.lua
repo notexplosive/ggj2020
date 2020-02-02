@@ -11,6 +11,31 @@ function Player:onCollide(other)
         return
     end
 
+    if other.JumpGate then
+        EXEC_TUTORIAL(
+            "jump-gate",
+            "This is a Jump Gate! These help you slingshot into the next system. In order to activate it you will need to employ the use of a Nano Interplanetary Travel Retrograde Operator (NITRO).\n\nA Jump Gate will only activate if you reach it at top speed using the NITRO.",
+            "Please subscribe me to your mailing list"
+        )
+
+        if self.actor.Nitro:isFastEnoughForJump() then
+            other.SpriteRenderer:setAnimation("active")
+            if self.actor.CameraFollowMe then
+                self.actor.CameraFollowMe:destroy()
+                self.actor.StayWithinBounds:destroy()
+                uiScene:addActor():addComponent(Components.WhiteFade, other.JumpGate.targetLevel, 0.5, 0, 0.5)
+                self.actor.visible = false
+                other:addComponent(Components.CameraFollowMe)
+                self.hasjumped = true
+                return
+            end
+        else
+            if self.actor.Nitro:get() then
+                statusLog("Not fast enough for jump")
+            end
+        end
+    end
+
     if not other.Solid then
         return
     end

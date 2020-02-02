@@ -18,7 +18,7 @@ function PlayerControl:update(dt)
     local angle = self.actor:angle()
 
     local thrust = Vector.newPolar(60, self.actor:angle()) * dt
-    local tilt = 2.5 * dt
+    local tilt = 2 * dt
 
     self.debrisTimer = self.debrisTimer - vec:length() * dt
 

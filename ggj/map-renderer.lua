@@ -34,6 +34,11 @@ function MapRenderer:draw(x, y)
         x = clamp(x, mapCanvas:left(), mapCanvas:right())
         y = clamp(y, mapCanvas:top(), mapCanvas:bottom())
         actor.ShowOnMap:drawMapIcon(x, y, scale)
+
+        if actor.Player then
+            local av = Vector.newPolar(5, actor:angle())
+            actor.ShowOnMap:drawMapIcon(x + av.x, y + av.y, scale * 0.75)
+        end
     end
 end
 

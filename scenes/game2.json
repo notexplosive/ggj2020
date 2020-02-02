@@ -31,34 +31,12 @@
     },
 
     {
-      "components": [["Asteroid", 7]],
-      "pos": [800, 520]
-    },
-
-    {
-      "components": [["Asteroid", 5]],
-      "pos": [1600, 520]
-    },
-
-    {
-      "components": [["Scrap"]],
-      "pos": [500, 500]
-    },
-    {
-      "components": [["Scrap"]],
-      "pos": [550, 520]
-    },
-    {
-      "components": [["Scrap"]],
-      "pos": [510, 540]
-    },
-    {
       "components": [
-        ["JumpGate", "game2"],
+        ["JumpGate", "end"],
         ["CollideRadius", 128],
         ["ShowOnMap", [1, 0, 1]]
       ],
-      "pos": [1000, 1000]
+      "pos": [1000, 520]
     }
   ]
 }

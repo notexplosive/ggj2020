@@ -45,11 +45,19 @@ function titleScreen()
     overlay = sceneLayers:set(4, Scene.new())
 end
 
+function credits()
+    backgroundScene = sceneLayers:set(1, Scene.fromPath("background"))
+    gameScene = sceneLayers:set(2, Scene.fromPath("credits"))
+    uiScene = sceneLayers:set(3, Scene.new())
+    overlay = sceneLayers:set(4, Scene.new())
+end
+
 titleScreen()
 
-function startGame()
+function loadLevel(levelName)
+    assert(levelName)
     backgroundScene = sceneLayers:set(1, Scene.fromPath("background"))
-    gameScene = sceneLayers:set(2, Scene.fromPath("game"))
+    gameScene = sceneLayers:set(2, Scene.fromPath(levelName))
     uiScene = sceneLayers:set(3, Scene.fromPath("ui"))
     overlay = sceneLayers:set(4, Scene.fromPath("overlay"))
 end

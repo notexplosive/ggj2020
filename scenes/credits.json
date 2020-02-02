@@ -1,0 +1,23 @@
+{
+  "root": [["CloseOnEscape"]],
+  "actors": [
+    {
+      "components": [["TextRenderer", "You Shipped It!", 128, 1000]],
+      "pos": [128, 256]
+    },
+
+    {
+      "components": [
+        [
+          "TextRenderer",
+          "Programming: NotExplosive, Ursagames\nPixel art: Ursagames\n\nMade for Global Game Jam 2020\nwith the theme \"Repair\" ",
+          48,
+          1000
+        ]
+      ],
+      "pos": [128, 410]
+    },
+
+    { "components": [["WhiteBG"]] }
+  ]
+}

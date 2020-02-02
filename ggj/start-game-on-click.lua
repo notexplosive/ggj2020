@@ -12,7 +12,7 @@ function StartGameOnClick:draw(x, y)
 end
 
 function StartGameOnClick:Clickable_onClickOn()
-    startGame()
+    loadLevel("game")
 end
 
 return StartGameOnClick

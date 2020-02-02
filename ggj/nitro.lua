@@ -4,7 +4,7 @@ registerComponent(Nitro, "Nitro")
 
 function Nitro:awake()
     self.normalTerminalSpeed = self.actor.Velocity.terminalSpeed
-    self.fastTerminalSpeed = self.normalTerminalSpeed * 6
+    self.fastTerminalSpeed = self.normalTerminalSpeed * 3
 end
 
 function Nitro:getBatteryUsage()
@@ -12,6 +12,14 @@ function Nitro:getBatteryUsage()
         return 15
     end
     return 0
+end
+
+function Nitro:isFastEnoughForJump()
+    return math.abs(self.actor.Velocity:get():length() - self.fastTerminalSpeed) < 5
+end
+
+function Nitro:get()
+    return self.actor.Velocity.terminalSpeed == self.fastTerminalSpeed
 end
 
 function Nitro:set(b)
