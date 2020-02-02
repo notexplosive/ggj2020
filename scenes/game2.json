@@ -5,7 +5,7 @@
       "components": [["Viewport", 2], ["CameraFollowPlayer"]]
     },
     {
-      "components": [["SectorBounds", 5000, 3000]]
+      "components": [["SectorBounds", 6000, 4000]]
     },
     {
       "components": [["StartTutorial"]]
@@ -15,13 +15,42 @@
       "pos": [200, 520]
     },
 
+
+    {
+      "components": [["Asteroid", 7]],
+      "pos": [800, 520]
+    },
+
+    {
+      "components": [["Asteroid", 7]],
+      "pos": [300, 1920]
+    },
+
+    {
+      "components": [["Asteroid", 6]],
+      "pos": [1600, 520]
+    },
+
+    {
+      "components": [["Scrap"]],
+      "pos": [500, 500]
+    },
+    {
+      "components": [["Scrap"]],
+      "pos": [550, 520]
+    },
+    {
+      "components": [["Scrap"]],
+      "pos": [510, 540]
+    },
+
     {
       "components": [
-        ["JumpGate", "end"],
+        ["JumpGate", "game3"],
         ["CollideRadius", 128],
         ["ShowOnMap", [1, 0, 1]]
       ],
-      "pos": [1000, 520]
+      "pos": [300, 2620]
     }
   ]
 }
