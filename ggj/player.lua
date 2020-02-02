@@ -46,6 +46,10 @@ function Player:onCollide(other)
         return
     end
 
+    sound = Assets.sounds.thump:get()
+    sound:setPitch(1.5)
+    sound:play()
+
     if self.invulnerable > 0 then
         return
     end
@@ -102,6 +106,10 @@ function Player:onCollide(other)
 end
 
 function Player:onDestroy()
+    sound = Assets.sounds.spring:get()
+    sound:setPitch(0.05)
+    sound:play()
+
     local actor = self.actor:scene():addActor()
     actor:setPos(self.actor:pos())
     actor:addComponent(Components.Explosion)
