@@ -89,7 +89,9 @@ function Widget:disable()
     if not self.isDisabled then
         statusLog(self.widgetName .. " disabled!")
         self.isDisabled = true
-        self.actor.SceneRenderer.scene:onDisable()
+        if self.actor.SceneRenderer.scene then
+            self.actor.SceneRenderer.scene:onDisable()
+        end
         self.storeScene = self.actor.SceneRenderer.scene
         self.actor.SceneRenderer.scene = nil
     end

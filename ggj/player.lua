@@ -55,6 +55,10 @@ function Player:onDestroy()
     local actor = self.actor:scene():addActor()
     actor:setPos(self.actor:pos())
     actor:addComponent(Components.Explosion)
+    local gameOverTransitionActor = self.actor:scene():addActor()
+    gameOverTransitionActor:setPos(self.actor:pos())
+    gameOverTransitionActor:addComponent(Components.GameOverExplosion)
+    uiScene:addActor():addComponent(Components.WhiteFade)
 end
 
 return Player
