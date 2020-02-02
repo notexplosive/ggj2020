@@ -9,7 +9,11 @@ function PositionCenterX:awake()
 end
 
 function PositionCenterX:update(dt)
-    self.actor:setPos(self.actor:scene().width / 2, self.actor:pos().y)
+    local bbxOffset = 0
+    if self.actor.BoundingBox then
+        bbxOffset = self.actor.BoundingBox:width() / 2
+    end
+    self.actor:setPos(self.actor:scene().width / 2 - bbxOffset, self.actor:pos().y)
 end
 
 return PositionCenterX

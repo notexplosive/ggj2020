@@ -88,6 +88,17 @@
 
     {
       "components": [
+        ["PositionCenterX"],
+        ["BoundingBox", 600, 600],
+        ["Canvas"],
+        ["SceneRenderer", "tutorial"],
+        ["TutorialWindow"]
+      ],
+      "pos": [0, 200]
+    },
+
+    {
+      "components": [
         ["DebugRenderer"],
         ["TakeSnapshot", 15],
         ["ToggleFrameFreezeMode"],

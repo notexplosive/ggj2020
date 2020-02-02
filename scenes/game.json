@@ -8,6 +8,9 @@
       "components": [["SectorBounds", 1920, 1080]]
     },
     {
+      "components": [["StartTutorial"]]
+    },
+    {
       "components": [
         ["SpriteRenderer", "temp-ship"],
         ["SectorBoundsRef"],
@@ -18,7 +21,7 @@
         ["TimeControlRef"],
         ["Inventory"],
         ["PlayerControl"],
-        ["Battery", 100],
+        ["Battery", 200],
         ["ShowOnMap", [0, 1, 0], 64],
         ["CollideRadius", 16]
       ],
