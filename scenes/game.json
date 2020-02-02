@@ -14,34 +14,7 @@
       "components": [["BecomePlayer"]],
       "pos": [200, 520]
     },
-
-    {
-      "components": [["Asteroid", 7]],
-      "pos": [800, 520]
-    },
-
-    {
-      "components": [["Asteroid", 5]],
-      "pos": [1600, 520]
-    },
-
-    {
-      "components": [["EnemyShip"]],
-      "pos": [500, 520]
-    },
-
-    {
-      "components": [["Scrap"]],
-      "pos": [500, 500]
-    },
-    {
-      "components": [["Scrap"]],
-      "pos": [550, 520]
-    },
-    {
-      "components": [["Scrap"]],
-      "pos": [510, 540]
-    },
+    
     {
       "components": [
         ["JumpGate", "game2"],
