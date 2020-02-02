@@ -22,7 +22,7 @@ function Player:onCollide(other)
     )
 
     if #enabledWidgets == 0 then
-        debugLog("GAME OVER")
+        self.actor:destroy()
         return
     end
 
