@@ -1,0 +1,50 @@
+{
+    "root": [["HandleCollide"], ["ResetOnR"]],
+    "actors": [
+      {
+        "components": [["Viewport", 2], ["CameraFollowPlayer"]]
+      },
+      {
+        "components": [["SectorBounds", 6000, 4000]]
+      },
+      {
+        "components": [["StartTutorial"]]
+      },
+      {
+        "components": [["BecomePlayer"]],
+        "pos": [3200, 1520],
+        "angle": 180
+      },
+  
+  
+      {
+        "components": [["Asteroid", 6]],
+        "pos": [1000, 1520]
+      },
+  
+      {
+        "components": [["Asteroid", 6]],
+        "pos": [1300, 1820]
+      },
+  
+      {
+        "components": [["Asteroid", 6]],
+        "pos": [1600, 520]
+      },
+  
+      {
+        "components": [["EnemyShip"]],
+        "pos": [500, 520]
+      },
+  
+      {
+        "components": [
+          ["JumpGate", "game4"],
+          ["CollideRadius", 128],
+          ["ShowOnMap", [1, 0, 1]]
+        ],
+        "pos": [200, 420]
+      }
+    ]
+  }
+  
