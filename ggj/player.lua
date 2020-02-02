@@ -154,6 +154,7 @@ function Player:activateJumpGate(other)
         self.actor.StayWithinBounds:destroy()
         uiScene:addActor():addComponent(Components.WhiteFade, other.JumpGate.targetLevel, 0.5, 0, 0.5)
         self.actor.visible = false
+        self.actor.Inventory:writeState()
         other:addComponent(Components.CameraFollowMe)
         self.hasjumped = true
         return

@@ -5,7 +5,7 @@ registerComponent(Widget, "Widget")
 local font = love.graphics.newFont("Roboto.woff", 22)
 
 function Widget:setup(name, priority)
-    self.repairCost = priority * 5
+    self.repairCost = priority * 10
     self.priority = priority
     self.widgetName = name
 end

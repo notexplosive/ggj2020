@@ -54,8 +54,12 @@ function Inventory:spendScrap(n)
     return false
 end
 
-function Inventory:onDestroy()
+function Inventory:writeState()
     State:set("scrap-count", self.scrap)
+end
+
+function Inventory:onDestroy()
+    self:writeState()
 end
 
 return Inventory
