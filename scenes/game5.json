@@ -47,22 +47,22 @@
 
       {
         "components": [["EnemyShip"]],
-        "pos": [2500, 820]
+        "pos": [4500, 500]
       },
 
       {
         "components": [["EnemyShip"]],
-        "pos": [2500, 120]
+        "pos": [4500, 1500]
       },
 
       {
         "components": [["EnemyShip"]],
-        "pos": [2000, 420]
+        "pos": [5000, 1000]
       },
 
       {
         "components": [["EnemyShip"]],
-        "pos": [3000, 420]
+        "pos": [4000, 1000]
       },
   
       {
@@ -71,7 +71,7 @@
           ["CollideRadius", 128],
           ["ShowOnMap", [1, 0, 1]]
         ],
-        "pos": [2500, 420]
+        "pos": [4500, 1000]
       }
     ]
   }
