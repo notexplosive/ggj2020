@@ -38,11 +38,11 @@ function Asteroid:setup(asteroidSize)
     self.actor:addComponent(Components.StayWithinBounds)
     self.actor:addComponent(Components.Solid)
 
-    self.actor:addComponent(Components.BoundingBox)
-    self.actor:addComponent(Components.Hoverable)
-    self.actor:addComponent(Components.HoverableRenderer)
-    self.actor:addComponent(Components.Clickable)
-    self.actor:addComponent(Components.DestroyOnClick)
+    -- self.actor:addComponent(Components.BoundingBox)
+    -- self.actor:addComponent(Components.Hoverable)
+    -- self.actor:addComponent(Components.HoverableRenderer)
+    -- self.actor:addComponent(Components.Clickable)
+    -- self.actor:addComponent(Components.DestroyOnClick)
 end
 
 function Asteroid:onCollide(other)
