@@ -1,6 +1,9 @@
 local StayWithinBounds = {}
 
 registerComponent(StayWithinBounds, "StayWithinBounds", {"Velocity"})
+function StayWithinBounds:awake()
+    self.actor:addComponentSafe(Components.SectorBoundsRef)
+end
 
 function StayWithinBounds:update(dt)
     local boundsRect = self.actor.SectorBoundsRef:get()
