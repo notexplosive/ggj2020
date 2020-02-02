@@ -27,6 +27,15 @@ function Player:onCollide(other)
         if self.actor.Nitro:isFastEnoughForJump() then
             other.SpriteRenderer:setAnimation("active")
             if self.actor.CameraFollowMe then
+                local sound = Assets.sounds["button-yes"]:get()
+                sound:setPitch(0.25)
+                sound:setVolume(1.5)
+                sound:play()
+
+                local spring = Assets.sounds["spring"]:get()
+                spring:setPitch(1.5)
+                spring:play()
+
                 self.actor.CameraFollowMe:destroy()
                 self.actor.StayWithinBounds:destroy()
                 uiScene:addActor():addComponent(Components.WhiteFade, other.JumpGate.targetLevel, 0.5, 0, 0.5)
