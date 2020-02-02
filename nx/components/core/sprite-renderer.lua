@@ -115,10 +115,6 @@ function SpriteRenderer:setFrame(frame)
     self.actor.AnimationFrameTracker:set(frame)
 end
 
-function SpriteRenderer:setFrame(index)
-    self.actor.AnimationFrameTracker:set(index)
-end
-
 function SpriteRenderer:getAnimation()
     if self.currentAnimation == nil then
         return "nil"
