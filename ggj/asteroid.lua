@@ -35,6 +35,7 @@ function Asteroid:setup(asteroidSize)
     self.actor:addComponent(Components.ShowOnMap, {1, 1, 0}, collisionSize)
     self.actor:addComponent(Components.Velocity)
     self.actor:addComponent(Components.StayWithinBounds)
+    self.actor:addComponent(Components.Solid)
     
 end
 
@@ -49,20 +50,44 @@ function Asteroid:onCollide(other)
 end
 
 function Asteroid:onDestroy()
-    local actor = self.actor:scene():addActor()
-    actor:setPos(self.actor:pos())
-    actor:addComponent(Components.Explosion)
+    self:createExplosion(0,0)
 
-    if self.asteroidSize > 1 then
-        self:createDebris(Vector.new(1, 0))
+    if self.asteroidSize > 4 then
+        for i=1, self.asteroidSize - 3 do
+            self:createDebris()
+        end
+    elseif self.asteroidSize > 1 then
+        self:createDebris()
+    else
+        
     end
 end
 
-function Asteroid:createDebris(direction)
+function Asteroid:createDebris()
+    local xDir = love.math.random() * 2 - 1
+    local yDir = love.math.random() * 2 - 1
+    local offsetMagnitude = 16
+    if self.asteroidSize == 7 then
+        offsetMagnitude = 170
+    end
+
+    local offsetVector = self.actor:pos()
+    offsetVector = offsetVector + (Vector.new(xDir, yDir) * offsetMagnitude)
+
     local actor = self.actor:scene():addActor()
-    actor:setPos(self.actor:pos())
+    actor:setPos(offsetVector)
     actor:addComponent(Components.Asteroid, self.asteroidSize - 1)
-    actor.Velocity:set(30, 20) 
+    actor.Velocity:set(xDir * 50, yDir * 50)
+
+    self:createExplosion(xDir * offsetMagnitude, yDir * offsetMagnitude)
+end
+
+function Asteroid:createExplosion(x, y)
+    local actor = self.actor:scene():addActor()
+    local offsetVector = self.actor:pos()
+    offsetVector = offsetVector + Vector.new(x, y)
+    actor:setPos(offsetVector)
+    actor:addComponent(Components.Explosion)
 end
 
 return Asteroid
