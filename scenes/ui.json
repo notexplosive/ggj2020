@@ -50,6 +50,15 @@
         ["RightJustify"]
       ]
     },
+    {
+      "components": [
+        ["BoundingBox", 220, 80],
+        ["Canvas"],
+        ["SceneRenderer", "nitro"],
+        ["Widget", "Nitro", 1],
+        ["RightJustify"]
+      ]
+    },
 
     {
       "components": [

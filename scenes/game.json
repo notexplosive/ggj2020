@@ -5,7 +5,7 @@
       "components": [["Viewport", 2], ["CameraFollowPlayer"]]
     },
     {
-      "components": [["SectorBounds", 1920, 1080]]
+      "components": [["SectorBounds", 5000, 3000]]
     },
     {
       "components": [["StartTutorial"]]
@@ -21,6 +21,7 @@
         ["TimeControlRef"],
         ["Inventory"],
         ["PlayerControl"],
+        ["Nitro"],
         ["Battery", 200],
         ["ShowOnMap", [0, 1, 0], 64],
         ["CollideRadius", 16]
@@ -29,18 +30,12 @@
     },
 
     {
-      "components": [
-        ["Asteroid", 7]
-      ],
+      "components": [["Asteroid", 7]],
       "pos": [800, 520]
     },
 
-    
-
     {
-      "components": [
-        ["Asteroid", 5]
-      ],
+      "components": [["Asteroid", 5]],
       "pos": [1600, 520]
     },
 
