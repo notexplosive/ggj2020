@@ -16,6 +16,7 @@ function WhiteFade:draw(x, y)
     love.graphics.rectangle("fill", 0, 0, love.graphics.getDimensions())
 
     if percent > 1 then
+        titleScreen()
     end
 end
 

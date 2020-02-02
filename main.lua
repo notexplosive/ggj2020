@@ -32,15 +32,27 @@ local Test = require("nx/test")
 Test.runComponentTests()
 
 local Scene = require("nx/game/scene")
-overlayScene = Scene.fromPath("overlay")
-uiScene = Scene.fromPath("ui")
-gameScene = Scene.fromPath("game")
-backgroundScene = Scene.fromPath("background")
 
-sceneLayers:add(backgroundScene)
-sceneLayers:add(gameScene)
-sceneLayers:add(uiScene)
-sceneLayers:add(overlayScene)
+sceneLayers:add(Scene.new())
+sceneLayers:add(Scene.new())
+sceneLayers:add(Scene.new())
+sceneLayers:add(Scene.new())
+
+function titleScreen()
+    backgroundScene = sceneLayers:set(1, Scene.fromPath("background"))
+    gameScene = sceneLayers:set(2, Scene.fromPath("title-screen"))
+    uiScene = sceneLayers:set(3, Scene.new())
+    overlay = sceneLayers:set(4, Scene.new())
+end
+
+titleScreen()
+
+function startGame()
+    backgroundScene = sceneLayers:set(1, Scene.fromPath("background"))
+    gameScene = sceneLayers:set(2, Scene.fromPath("game"))
+    uiScene = sceneLayers:set(3, Scene.fromPath("ui"))
+    overlay = sceneLayers:set(4, Scene.fromPath("overlay"))
+end
 
 Scene:createEvent("onDisable", {})
 

@@ -66,8 +66,10 @@ function PlayerControl:setInputVal(key, value)
 end
 
 function PlayerControl:onCollide(other)
-    local vec = self.actor:pos() - other:pos()
-    self.actor.Velocity:set(vec:normalized() * vec:length())
+    if other.Solid then
+        local vec = self.actor:pos() - other:pos()
+        self.actor.Velocity:set(vec:normalized() * vec:length())
+    end
 end
 
 function PlayerControl:getBatteryUsage()

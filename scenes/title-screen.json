@@ -1,0 +1,30 @@
+{
+  "root": [],
+  "actors": [
+    {
+      "components": [["TextRenderer", "Ship It!", 128, 1000]],
+      "pos": [128, 256]
+    },
+
+    {
+      "components": [
+        ["TextRenderer", "by NotExplosive and Ursagames", 48, 1000]
+      ],
+      "pos": [128, 410]
+    },
+
+    {
+      "components": [
+        ["BoundingBox", 400, 64],
+        ["Hoverable"],
+        ["ButtonBorder"],
+        ["Clickable"],
+        ["StartGameOnClick"],
+        ["BoundedTextRenderer", "Launch", 33, "center", 1, [1, 1, 1, 1], 0, 10]
+      ],
+      "pos": [128, 500]
+    },
+
+    { "components": [["WhiteBG"]] }
+  ]
+}
