@@ -30,6 +30,11 @@
     },
 
     {
+        "components": [["Asteroid", 7]],
+        "pos": [4500, 1000]
+      },
+
+    {
       "components": [["Asteroid", 6]],
       "pos": [1600, 520]
     },
