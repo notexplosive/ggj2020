@@ -21,7 +21,7 @@ function BootUp:draw(x, y)
         if State:get("power-failed-first-time") then
             EXEC_TUTORIAL(
                 "power-failure",
-                "Reboot complete!\n\nWhen the StinkBug 0.8 runs out of battery, all systems automatically shut down and the Fission Reactor will jumpstart your battery back to full health.\n\nBe aware of your surroundings when you run out of battery.",
+                "Reboot complete!\n\nWhen the StinkBug 0.8 runs out of battery, all systems including the viewing window conveniently shut down entirely. The Fission Reactor will jumpstart your battery back to full charge.\n\nBe aware of your surroundings when you run out of battery, as you will not be able to see or do anything while the reboot is in progress.",
                 "Thanks for rebooting for me!"
             )
         end

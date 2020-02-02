@@ -1,10 +1,10 @@
 {
-  "root": [["SceneBorder"]],
+  "root": [["SceneBorder"], ["BackgroundColor", [0.1, 0.1, 0.25]]],
   "actors": [
     {
       "components": [
         ["BoundingBox", 550, 500],
-        ["BoundedTextRenderer", "Hello world!", 20]
+        ["BoundedTextRenderer", "Hello world!", 25]
       ],
       "pos": [25, 25]
     },

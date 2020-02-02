@@ -11,7 +11,7 @@ function TutorialWindow:awake()
             local textRenderers = self.actor.SceneRenderer.scene:getAllActorsWith(Components.BoundedTextRenderer)
             textRenderers[1].BoundedTextRenderer.text = text
             if confirmText then
-                textRenderers[2].BoundedTextRenderer.text = confirmText
+                textRenderers[2].BoundedTextRenderer.text = confirmText or "OK"
             end
         end
     end
