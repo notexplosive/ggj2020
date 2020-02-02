@@ -15,11 +15,16 @@ function Player:update(dt)
         self.invulnerable = self.invulnerable - dt
     end
 
-    local thrust =
+    local engineVolume =
         self.actor.PlayerControl.inputState.thrustLeft + self.actor.PlayerControl.inputState.thrustRight +
         self.actor.PlayerControl.inputState.thrustMiddle
 
-    self.humSound:setVolume(thrust / 10)
+    if self.actor.Nitro.enabled then
+        engineVolume = engineVolume * 2
+    end
+
+    self.humSound:setVolume(engineVolume / 20)
+    self.humSound:setPitch(engineVolume / 10 + 0.1)
 
     if not self.actor.visible then
         self.humSound:stop()
