@@ -45,6 +45,16 @@
       "components": [
         ["BoundingBox", 220, 80],
         ["Canvas"],
+        ["SceneRenderer", "laser"],
+        ["Widget", "Laser", 2],
+        ["RightJustify"]
+      ]
+    },
+
+    {
+      "components": [
+        ["BoundingBox", 220, 80],
+        ["Canvas"],
         ["SceneRenderer", "resources"],
         ["Widget", "Scrap Counter", 2]
       ]

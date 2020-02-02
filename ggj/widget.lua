@@ -94,14 +94,6 @@ function Widget:disable()
     end
 end
 
-function Widget:onKeyPress(key, scancode, wasRelease)
-    if key == "space" then
-        if not self.isDisabled then
-            self:disable()
-        end
-    end
-end
-
 function Widget:getBatteryUsage()
     if self.isDisabled then
         return 0

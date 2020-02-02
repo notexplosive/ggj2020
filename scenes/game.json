@@ -12,6 +12,7 @@
         ["SpriteRenderer", "temp-ship"],
         ["SectorBoundsRef"],
         ["Velocity"],
+        ["Laser"],
         ["StayWithinBounds"],
         ["Player"],
         ["TimeControlRef"],
@@ -32,6 +33,7 @@
       ],
       "pos": [800, 520]
     },
+
     {
       "components": [
         ["SpriteRenderer", "big-rock"],

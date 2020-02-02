@@ -1,0 +1,17 @@
+{
+  "root": [
+    ["PositionCenterX"],
+    ["TextRenderer", "LASER", 22, 100000, "center"],
+    ["SceneBorder"]
+  ],
+  "actors": [
+    {
+      "components": [
+        ["PlayerRef"],
+        ["Checkbox", false, "ignore-this", "fire"],
+        ["LaserControl"]
+      ],
+      "pos": [78, 40]
+    }
+  ]
+}

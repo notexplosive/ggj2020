@@ -4,15 +4,6 @@ registerComponent(TimeControl, "TimeControl", {"Checkbox"})
 
 TIMESCALE = 1
 
-function TimeControl:setup()
-end
-
-function TimeControl:awake()
-end
-
-function TimeControl:draw(x, y)
-end
-
 function TimeControl:update(dt)
     local enabled = self.actor.Checkbox.state
     if enabled then
