@@ -1,3 +1,4 @@
+local State = require("nx/state")
 local SectorTitle = {}
 
 registerComponent(SectorTitle, "SectorTitle")
@@ -16,6 +17,8 @@ function SectorTitle:start()
     titleDisplay:setPos(0, 100)
 
     self.textRenderer = textRenderer
+
+    State:persist("continue-level", self.actor:scene().path)
 end
 
 function SectorTitle:update(dt)

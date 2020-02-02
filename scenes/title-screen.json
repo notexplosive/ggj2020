@@ -25,6 +25,27 @@
       "pos": [128, 500]
     },
 
+    {
+      "components": [
+        ["BoundingBox", 400, 64],
+        ["Hoverable"],
+        ["ButtonBorder"],
+        ["Clickable"],
+        ["LoadPersistedLevelOnClick"],
+        [
+          "BoundedTextRenderer",
+          "Continue",
+          33,
+          "center",
+          1,
+          [1, 1, 1, 1],
+          0,
+          10
+        ]
+      ],
+      "pos": [128, 580]
+    },
+
     { "components": [["WhiteBG"]] }
   ]
 }
