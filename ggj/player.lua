@@ -3,7 +3,13 @@ local Player = {}
 registerComponent(Player, "Player")
 
 function Player:awake()
-    self.lastHit = love.timer.getTime()
+    self.invulnerable = 0
+end
+
+function Player:update(dt)
+    if self.invulnerable > 0 then
+        self.invulnerable = self.invulnerable - dt
+    end
 end
 
 function Player:onCollide(other)
@@ -40,11 +46,15 @@ function Player:onCollide(other)
         return
     end
 
-    if love.timer.getTime() < self.lastHit + 0.5 then
+    if self.invulnerable > 0 then
         return
     end
 
-    self.lastHit = love.timer.getTime()
+    self.invulnerable = 0.5
+
+    local hitExplosion = self.actor:scene():addActor()
+    hitExplosion:setPos(self.actor:pos())
+    hitExplosion:addComponent(Components.MediumExplosion)
 
     EXEC_TUTORIAL(
         "first-collide",

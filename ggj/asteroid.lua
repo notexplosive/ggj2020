@@ -107,7 +107,11 @@ function Asteroid:createExplosion(x, y)
     local offsetVector = self.actor:pos()
     offsetVector = offsetVector + Vector.new(x, y)
     actor:setPos(offsetVector)
-    actor:addComponent(Components.Explosion)
+    if self.asteroidSize == 7 then
+        actor:addComponent(Components.PlanetoidExplosion)
+    else
+        actor:addComponent(Components.Explosion)
+    end
 end
 
 return Asteroid
