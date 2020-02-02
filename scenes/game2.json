@@ -11,6 +11,9 @@
       "components": [["StartTutorial"]]
     },
     {
+      "components": [["SectorTitle", "Level 2"]]
+    },
+    {
       "components": [["BecomePlayer"]],
       "pos": [200, 520]
     },
