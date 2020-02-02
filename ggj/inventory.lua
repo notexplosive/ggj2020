@@ -25,7 +25,7 @@ function Inventory:update(dt)
             if vec:length() < 32 then
                 actor:destroy()
                 self.scrap = self.scrap + 10
-                self.collectTimer = 1
+                self.collectTimer = 0.25
             end
         end
     end
