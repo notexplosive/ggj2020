@@ -5,7 +5,7 @@
       "components": [["Viewport", 2], ["CameraFollowPlayer"]]
     },
     {
-      "components": [["SectorBounds", 1920, 1080]]
+      "components": [["SectorBounds", 7000, 6000]]
     },
     {
       "components": [["StartTutorial"]]
@@ -29,18 +29,12 @@
     },
 
     {
-      "components": [
-        ["Asteroid", 7]
-      ],
+      "components": [["Asteroid", 7]],
       "pos": [800, 520]
     },
 
-    
-
     {
-      "components": [
-        ["Asteroid", 5]
-      ],
+      "components": [["Asteroid", 5]],
       "pos": [1600, 520]
     },
 
