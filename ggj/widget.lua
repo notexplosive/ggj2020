@@ -101,6 +101,10 @@ function Widget:disable()
         end
         self.storeScene = self.actor.SceneRenderer.scene
         self.actor.SceneRenderer.scene = nil
+
+        local sound = Assets.sounds.boom:get()
+        sound:setPitch(1.6)
+        sound:play()
     end
 end
 
