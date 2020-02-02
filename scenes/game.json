@@ -52,8 +52,12 @@
       "pos": [510, 540]
     },
     {
-      "components": [["Stargate"]],
-      "pos": [-128, 64]
+      "components": [
+        ["Stargate"],
+        ["CollideRadius", 128],
+        ["ShowOnMap", [1, 0, 1]]
+      ],
+      "pos": [1000, 1000]
     }
   ]
 }
