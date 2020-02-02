@@ -90,9 +90,9 @@
       "components": [
         ["PositionCenterX"],
         ["BoundingBox", 600, 600],
+        ["TutorialWindow"],
         ["Canvas"],
-        ["SceneRenderer", "tutorial"],
-        ["TutorialWindow"]
+        ["SceneRenderer", "tutorial"]
       ],
       "pos": [0, 200]
     },

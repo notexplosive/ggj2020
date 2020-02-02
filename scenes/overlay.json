@@ -1,0 +1,21 @@
+{
+  "root": [],
+  "actors": [
+    {
+      "components": [
+        ["BlackScreen"],
+        ["BoundingBox", 500, 80],
+        ["PositionCenterX"],
+        ["BootUp"]
+      ],
+      "pos": [0, 450]
+    },
+    {
+      "components": [
+        ["TextRenderer", "Boot up in progress...", 66, 5000, "center"],
+        ["PositionCenterX"]
+      ],
+      "pos": [0, 300]
+    }
+  ]
+}

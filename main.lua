@@ -32,6 +32,7 @@ local Test = require("nx/test")
 Test.runComponentTests()
 
 local Scene = require("nx/game/scene")
+overlayScene = Scene.fromPath("overlay")
 uiScene = Scene.fromPath("ui")
 gameScene = Scene.fromPath("game")
 backgroundScene = Scene.fromPath("background")
@@ -39,6 +40,7 @@ backgroundScene = Scene.fromPath("background")
 sceneLayers:add(backgroundScene)
 sceneLayers:add(gameScene)
 sceneLayers:add(uiScene)
+sceneLayers:add(overlayScene)
 
 Scene:createEvent("onDisable", {})
 

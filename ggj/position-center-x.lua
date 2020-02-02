@@ -6,6 +6,7 @@ function PositionCenterX:setup()
 end
 
 function PositionCenterX:awake()
+    self:update(0)
 end
 
 function PositionCenterX:update(dt)

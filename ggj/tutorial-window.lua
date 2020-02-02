@@ -18,6 +18,11 @@ function TutorialWindow:awake()
     self.actor.visible = false
 end
 
+function TutorialWindow:draw()
+    love.graphics.setColor(0, 0, 0, 0.5)
+    love.graphics.rectangle("fill", 0, 0, love.graphics.getDimensions())
+end
+
 function TutorialWindow:update(dt)
     gameScene.freeze = self.actor.visible
     backgroundScene.freeze = self.actor.visible

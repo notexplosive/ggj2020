@@ -23,7 +23,7 @@ function Laser:update(dt)
             shot:setPos(self.actor:pos() + Vector.newPolar(16, self.actor:angle()))
             shot:addComponent(Components.Velocity, Vector.newPolar(700, self.actor:angle()))
             shot:addComponent(Components.CircleRenderer, 5, {1, 0, 0})
-            shot:addComponent(Components.LaserBullet)
+            shot:addComponent(Components.LaserBullet, self.actor)
         end
     end
 end

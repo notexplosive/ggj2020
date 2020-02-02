@@ -21,5 +21,9 @@ function SceneLayers:add(scene)
     append(self.list, scene)
 end
 
+function SceneLayers:set(index, scene)
+    self.list[index] = scene
+end
+
 -- Singleton!
 return SceneLayers.new()

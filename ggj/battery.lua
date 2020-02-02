@@ -1,3 +1,5 @@
+local Scene = require("nx/game/scene")
+local sceneLayers = require("nx/scene-layers")
 local Battery = {}
 
 registerComponent(Battery, "Battery", {"PlayerControl", "TimeControlRef"})
@@ -13,6 +15,16 @@ function Battery:update(dt)
 
     if self.quantity > self.max then
         self.quantity = self.max
+    end
+
+    if self.quantity <= 0 then
+        self.quantity = self.max
+        uiScene:onDisable()
+        sceneLayers:set(4, Scene.fromPath("overlay"))
+        EXEC_TUTORIAL(
+            "power-failure",
+            "Reboot complete!\n\nWhen the StinkBug 0.8 runs out of battery, all systems automatically shut down and the Fission Reactor will jumpstart your battery back to full health.\n\nBe aware of your surroundings when you run out of battery."
+        )
     end
 end
 

@@ -10,4 +10,8 @@ function LaserControl:update(dt)
     end
 end
 
+function LaserControl:onDisable()
+    self.actor.Checkbox.state = false
+end
+
 return LaserControl
