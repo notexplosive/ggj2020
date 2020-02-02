@@ -22,4 +22,9 @@ function TimeControl:update(dt)
     end
 end
 
+function TimeControl:onDisable()
+    TIMESCALE = 1
+    self.actor.Checkbox.state = false
+end
+
 return TimeControl

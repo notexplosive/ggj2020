@@ -26,4 +26,12 @@ function Inventory:getScrap()
     return self.scrap
 end
 
+function Inventory:spendScrap(n)
+    if self.scrap >= n then
+        self.scrap = self.scrap - n
+        return true
+    end
+    return false
+end
+
 return Inventory

@@ -4,7 +4,14 @@ registerComponent(Widget, "Widget")
 
 local font = love.graphics.newFont(22)
 
+function Widget:setup(name, priority)
+    self.repairCost = priority * 5
+    self.priority = priority
+    self.widgetName = name
+end
+
 function Widget:awake()
+    self.actor:addComponentSafe(Components.PlayerRef)
     self.actor:addComponent(Components.Hoverable)
     self.actor:addComponent(Components.Clickable)
 
@@ -13,6 +20,9 @@ function Widget:awake()
     self.recoverTimer = 0
     self.maxRecoverTime = 5
     self.isRecovering = false
+    self.priority = 0
+    self.repairCost = 10
+    self.widgetName = "module"
 end
 
 function Widget:update(dt)
@@ -35,7 +45,7 @@ function Widget:draw(x, y)
                 love.graphics.rectangle("fill", 0, 0, self.actor.BoundingBox:getRect():wh())
                 love.graphics.setColor(0.25, 0.7, 0)
 
-                status = "OFFLINE"
+                status = "-- OFFLINE --\nRepair: " .. self.repairCost .. " scrap"
 
                 if self.isRecovering then
                     local w, h = self.actor.BoundingBox:getRect():wh()
@@ -49,7 +59,7 @@ function Widget:draw(x, y)
 
                 love.graphics.setColor(1, 1, 1, 1)
                 love.graphics.setFont(font)
-                love.graphics.print("module" .. ":\n" .. status)
+                love.graphics.print(self.widgetName .. "\n" .. status)
             end
         )
     end
@@ -57,9 +67,14 @@ end
 
 function Widget:Clickable_onClickOn(button)
     if self.isDisabled and button == 1 then
-        self.isDisabled = false
-        self.isRecovering = true
-        self.recoverTimer = self.maxRecoverTime
+        local player = self.actor.PlayerRef:get()
+        if player then
+            if player.Inventory:spendScrap(self.repairCost) then
+                self.isDisabled = false
+                self.isRecovering = true
+                self.recoverTimer = self.maxRecoverTime
+            end
+        end
     end
 end
 

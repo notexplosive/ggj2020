@@ -12,7 +12,7 @@
         ["BoundingBox", 220, 220],
         ["Canvas"],
         ["SceneRenderer", "velocity"],
-        ["Widget"]
+        ["Widget", "Velocity", 1]
       ]
     },
     {
@@ -20,7 +20,7 @@
         ["BoundingBox", 220, 260],
         ["Canvas"],
         ["SceneRenderer", "thrusters"],
-        ["Widget"],
+        ["Widget", "Thrusters", 3],
         ["RightJustify"]
       ]
     },
@@ -29,7 +29,7 @@
         ["BoundingBox", 220, 220],
         ["Canvas"],
         ["SceneRenderer", "map"],
-        ["Widget"]
+        ["Widget", "Map", 1]
       ]
     },
     {
@@ -37,7 +37,7 @@
         ["BoundingBox", 220, 80],
         ["Canvas"],
         ["SceneRenderer", "time"],
-        ["Widget"],
+        ["Widget", "Chronostasis", 2],
         ["RightJustify"]
       ]
     },
@@ -46,7 +46,7 @@
         ["BoundingBox", 220, 80],
         ["Canvas"],
         ["SceneRenderer", "resources"],
-        ["Widget"]
+        ["Widget", "Scrap Counter", 2]
       ]
     },
     {
@@ -54,7 +54,7 @@
         ["BoundingBox", 220, 80],
         ["Canvas"],
         ["SceneRenderer", "battery"],
-        ["Widget"]
+        ["Widget", "Battery Indicator", 2]
       ]
     },
     {
