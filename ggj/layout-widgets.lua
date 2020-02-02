@@ -8,7 +8,7 @@ end
 function LayoutWidgets:update(dt)
     local leftWidgets = {}
     local rightWidgets = {}
-    for i, widget in self.actor:scene():eachActorWith(Components.SceneRenderer) do
+    for i, widget in self.actor:scene():eachActorWith(Components.Widget) do
         local isRight = widget.RightJustify
         if isRight then
             append(rightWidgets, widget)

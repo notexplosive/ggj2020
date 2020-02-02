@@ -15,6 +15,12 @@ function Inventory:update(dt)
         self.collectTimer = self.collectTimer - dt
         if self.collectTimer < 0 then
             statusLog("Collected scrap")
+
+            EXEC_TUTORIAL(
+                "collect-scrap",
+                "You've collected some SCRAP!\n\nYou can use Scrap to repair damaged modules when the ware out.\n\nPlease note doing your own repairs will void your warranty.",
+                "Wow! So useful! Thanks Operator's Manual!"
+            )
         end
     end
 

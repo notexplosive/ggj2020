@@ -1,0 +1,23 @@
+{
+  "root": [["SceneBorder"]],
+  "actors": [
+    {
+      "components": [
+        ["BoundingBox", 550, 500],
+        ["BoundedTextRenderer", "Hello world!", 20]
+      ],
+      "pos": [25, 25]
+    },
+    {
+      "components": [
+        ["BoundingBox", 500, 32],
+        ["BoundedTextRenderer", "OK", 20, "left", 1, [1, 1, 1, 1], 5, 2],
+        ["Hoverable"],
+        ["Clickable"],
+        ["ButtonBorder"],
+        ["CloseTutorialOnClick"]
+      ],
+      "pos": [25, 525]
+    }
+  ]
+}
