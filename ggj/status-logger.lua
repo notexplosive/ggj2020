@@ -6,6 +6,7 @@ STATUS_LOGGER = StatusLogger
 
 function StatusLogger:awake()
     STATUS_LOGGER = self
+    self:log("System started!")
 end
 
 function StatusLogger:log(str)

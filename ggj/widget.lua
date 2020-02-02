@@ -2,7 +2,7 @@ local Widget = {}
 
 registerComponent(Widget, "Widget")
 
-local font = love.graphics.newFont(22)
+local font = love.graphics.newFont("Roboto.woff", 22)
 
 function Widget:setup(name, priority)
     self.repairCost = priority * 5
@@ -73,6 +73,8 @@ function Widget:Clickable_onClickOn(button)
                 self.isDisabled = false
                 self.isRecovering = true
                 self.recoverTimer = self.maxRecoverTime
+            else
+                statusLog("Not enough scrap!")
             end
         end
     end
@@ -81,6 +83,7 @@ end
 function Widget:recover()
     if self.storeScene then
         self.actor.SceneRenderer.scene = self.storeScene
+        statusLog(self.widgetName .. " repaired!")
     end
     self.isRecovering = false
     self.isDisabled = false

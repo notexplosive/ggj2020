@@ -7,13 +7,13 @@ function GameOverExplosion:awake()
 end
 
 function GameOverExplosion:draw(x, y)
-    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.setColor(1, 1, 1, 0.75)
     love.graphics.ellipse(
         "fill",
         x,
         y,
-        self.time * 500 + math.sin(self.time * 30) * 200,
-        self.time * 500 + math.cos(self.time * 30) * 200
+        self.time * 800 + math.sin(self.time * 30) * 100,
+        self.time * 500 + math.cos(self.time * 30) * 100
     )
 end
 

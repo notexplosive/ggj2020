@@ -10,7 +10,7 @@ local fontCache = {
         if self.data[fontSize] then
             return self.data[fontSize]
         else
-            self.data[fontSize] = love.graphics.newFont(fontSize)
+            self.data[fontSize] = love.graphics.newFont("Roboto.woff", fontSize)
             return self.data[fontSize]
         end
     end

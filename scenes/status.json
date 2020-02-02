@@ -3,7 +3,7 @@
   "actors": [
     {
       "components": [["StatusLogger"]],
-      "pos": [2, 58]
+      "pos": [2, 195]
     }
   ]
 }

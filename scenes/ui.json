@@ -86,7 +86,7 @@
     },
     {
       "components": [
-        ["BoundingBox", 220, 80],
+        ["BoundingBox", 220, 220],
         ["Canvas"],
         ["SceneRenderer", "status"],
         ["Widget", "Status", 1]
