@@ -13,7 +13,8 @@
           "Programming: NotExplosive, Ursagames\nPixel art: Ursagames\nSounds from Freesound.org by Timbre\nAdditional Sounds & Music from the Superpowers Asset Pack by Pixel-boy\n\nMade for Global Game Jam 2020\nwith the theme \"Repair\" ",
           48,
           1000
-        ]
+        ],
+        ["AppendTotalScrapToTextRenderer"]
       ],
       "pos": [128, 410]
     },

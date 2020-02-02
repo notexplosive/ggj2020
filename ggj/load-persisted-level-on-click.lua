@@ -16,7 +16,7 @@ function LoadPersistedLevelOnClick:draw(x, y)
 end
 
 function LoadPersistedLevelOnClick:Clickable_onClickOn()
-    loadLevel(State:get("continue-level"))
+    loadLevel(State:get("continue-level") or "game")
 end
 
 return LoadPersistedLevelOnClick
