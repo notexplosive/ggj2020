@@ -27,7 +27,8 @@ end
 
 function ButtonBorder:Clickable_onClickOn()
     local sound = Assets.sounds["ui-beep"]:get()
-    sound:setPitch(1.2)
+    sound:setPitch(0.8)
+    sound:setVolume(0.15)
     sound:play()
 end
 
