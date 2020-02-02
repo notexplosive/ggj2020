@@ -1,4 +1,4 @@
-ALLOW_DEBUG = true
+ALLOW_DEBUG = false
 DEBUG = false
 
 require("nx/util")
