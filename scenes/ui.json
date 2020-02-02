@@ -59,6 +59,15 @@
     },
     {
       "components": [
+        ["BoundingBox", 220, 80],
+        ["Canvas"],
+        ["SceneRenderer", "status"],
+        ["Widget", "Status", 1]
+      ]
+    },
+
+    {
+      "components": [
         ["PositionCenterX"],
         ["TextRenderer", "RETURN TO SECTOR", 55, 10000, "center"],
         ["PlayerRef"],
