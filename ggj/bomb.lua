@@ -16,6 +16,15 @@ function Bomb:awake()
     self.actor:addComponent(Components.PlayerRef)
 end
 
+
+function Bomb:onCollide(other)
+    self.actor:destroy()
+    if other.Player then
+        other.visible = false
+    end
+end
+
+
 function Bomb:onDestroy()
     self:createExplosion(0,0)
 
@@ -24,14 +33,18 @@ function Bomb:onDestroy()
         local dirToPlayer = self.playerPointer:pos() - self.actor:pos()
         local distance = dirToPlayer:length()
         if distance < 280 then
-            self.playerPointer.Player:hurtPlayer()
+            uiScene:addActor():addComponent(Components.WhiteFade)
         end
         debugLog(distance)
     end
 
-    local sound = Assets.sounds.spring:get()
-    sound:setPitch(0.15)
+    local sound = Assets.sounds.boom:get()
+    sound:setPitch(1.0)
     sound:play()
+
+    local sound2 = Assets.sounds.spring:get()
+    sound2:setPitch(0.1)
+    sound2:play()
         
 end
 
