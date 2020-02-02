@@ -32,7 +32,8 @@
       "components": [
         ["SpriteRenderer", "planetoid"],
         ["CollideRadius", 230],
-        ["ShowOnMap", [1, 1, 0]]
+        ["ShowOnMap", [1, 1, 0]],
+        ["Asteroid"]
       ],
       "pos": [800, 520]
     },
@@ -41,7 +42,8 @@
       "components": [
         ["SpriteRenderer", "big-rock"],
         ["CollideRadius", 32],
-        ["ShowOnMap", [1, 1, 0]]
+        ["ShowOnMap", [1, 1, 0]],
+        ["Asteroid"]
       ],
       "pos": [1600, 520]
     },
