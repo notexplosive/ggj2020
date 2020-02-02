@@ -1,5 +1,5 @@
 {
-  "root": [["HandleCollide"]],
+  "root": [["HandleCollide"], ["ResetOnR"]],
   "actors": [
     {
       "components": [["Viewport", 2], ["CameraFollowPlayer"]]

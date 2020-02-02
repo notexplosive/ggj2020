@@ -4,10 +4,7 @@ registerComponent(Asteroid, "Asteroid")
 
 function Asteroid:setup(asteroidSize)
     self.asteroidSize = asteroidSize
-    self.health = asteroidSize * asteroidSize
-    self.health = asteroidSize
     local collisionSize = 230
-
 
     if asteroidSize == 7 then
         self.actor:addComponent(Components.SpriteRenderer, "planetoid")
@@ -37,22 +34,13 @@ function Asteroid:setup(asteroidSize)
     self.actor:addComponent(Components.Velocity)
     self.actor:addComponent(Components.StayWithinBounds)
     self.actor:addComponent(Components.Solid)
+    self.actor:addComponent(Components.EnemyHealth, asteroidSize)
 
     -- self.actor:addComponent(Components.BoundingBox)
     -- self.actor:addComponent(Components.Hoverable)
     -- self.actor:addComponent(Components.HoverableRenderer)
     -- self.actor:addComponent(Components.Clickable)
     -- self.actor:addComponent(Components.DestroyOnClick)
-end
-
-function Asteroid:onCollide(other)
-    if other.LaserBullet then
-        other:destroy()
-        self.health = self.health - 1
-    end
-    if self.health < 1 then
-        self.actor:destroy()
-    end 
 end
 
 function Asteroid:onDestroy()

@@ -26,6 +26,11 @@
     },
 
     {
+      "components": [["EnemyShip"]],
+      "pos": [500, 520]
+    },
+
+    {
       "components": [["Scrap"]],
       "pos": [500, 500]
     },
