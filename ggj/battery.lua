@@ -18,6 +18,10 @@ function Battery:update(dt)
         self.quantity = self.max
     end
 
+    if self.quantity / self.max < 0.25 then
+        Assets.sounds["battery-low"]:play()
+    end
+
     if self.quantity <= 0 then
         self.quantity = self.max
         uiScene:onDisable()

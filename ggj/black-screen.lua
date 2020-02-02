@@ -4,6 +4,7 @@ registerComponent(BlackScreen, "BlackScreen")
 
 function BlackScreen:awake()
     self.time = 0
+    Assets.sounds["lose-power"]:play()
 end
 
 function BlackScreen:update(dt)
@@ -23,6 +24,10 @@ end
 
 function BlackScreen:onMouseMove(dt)
     self.actor:scene():consumeHover()
+end
+
+function BlackScreen:onDestroy()
+    Assets.sounds["power-on"]:play(0)
 end
 
 return BlackScreen

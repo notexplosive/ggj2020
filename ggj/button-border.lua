@@ -24,4 +24,9 @@ end
 function ButtonBorder:Hoverable_onHoverEnd()
     self._hover = false
 end
+
+function ButtonBorder:Clickable_onClickOn()
+    Assets.sounds["button-ok"]:stopThenPlay()
+end
+
 return ButtonBorder
