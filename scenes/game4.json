@@ -11,6 +11,9 @@
         "components": [["StartTutorial"]]
       },
       {
+        "components": [["SectorTitle", "Level 4"]]
+      },
+      {
         "components": [["BecomePlayer"]],
         "pos": [1200, 2520],
         "angle": 270
@@ -30,11 +33,6 @@
       {
         "components": [["Asteroid", 7]],
         "pos": [1600, 520]
-      },
-  
-      {
-        "components": [["EnemyShip"]],
-        "pos": [500, 520]
       },
   
       {

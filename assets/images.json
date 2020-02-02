@@ -52,5 +52,7 @@
   "charge-status": ["charge-status.png", 32, 32],
   "explosion": ["explosion.png", 64, 64],
   "ship-explosion": ["ship-explosion.png", 64, 64],
-  "planetoid-explosion": ["planetoid-explosion.png", 512, 512]
+  "planetoid-explosion": ["planetoid-explosion.png", 512, 512],
+  "bullet-explosion": ["bullet-explosion.png", 32, 32],
+  "bullet": ["bullet.png", 16, 16]
 }

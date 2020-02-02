@@ -11,12 +11,12 @@
         "components": [["StartTutorial"]]
       },
       {
-        "components": [["SectorTitle", "Level 3"]]
+        "components": [["SectorTitle", "Level 5"]]
       },
       {
         "components": [["BecomePlayer"]],
-        "pos": [3200, 1520],
-        "angle": 180
+        "pos": [1200, 2520],
+        "angle": 0
       },
   
   
@@ -39,14 +39,39 @@
         "components": [["EnemyShip"]],
         "pos": [500, 520]
       },
+
+      {
+        "components": [["EnemyShip"]],
+        "pos": [1500, 220]
+      },
+
+      {
+        "components": [["EnemyShip"]],
+        "pos": [2500, 820]
+      },
+
+      {
+        "components": [["EnemyShip"]],
+        "pos": [2500, 120]
+      },
+
+      {
+        "components": [["EnemyShip"]],
+        "pos": [2000, 420]
+      },
+
+      {
+        "components": [["EnemyShip"]],
+        "pos": [3000, 420]
+      },
   
       {
         "components": [
-          ["JumpGate", "game4"],
+          ["JumpGate", "end"],
           ["CollideRadius", 128],
           ["ShowOnMap", [1, 0, 1]]
         ],
-        "pos": [200, 420]
+        "pos": [2500, 420]
       }
     ]
   }
