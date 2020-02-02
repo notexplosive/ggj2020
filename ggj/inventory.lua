@@ -1,3 +1,4 @@
+local State = require("nx/state")
 local Inventory = {}
 
 registerComponent(Inventory, "Inventory")
@@ -6,7 +7,7 @@ function Inventory:setup()
 end
 
 function Inventory:awake()
-    self.scrap = 0
+    self.scrap = State:get("scrap-count") or 0
     self.collectTimer = 0
 end
 
@@ -51,6 +52,10 @@ function Inventory:spendScrap(n)
         return true
     end
     return false
+end
+
+function Inventory:onDestroy()
+    State:set("scrap-count", self.scrap)
 end
 
 return Inventory
