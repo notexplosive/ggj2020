@@ -1,11 +1,11 @@
-local CloseOnEscape = {}
+local ResetOnR = {}
 
-registerComponent(CloseOnEscape, "CloseOnEscape")
+registerComponent(ResetOnR, "ResetOnR")
 
-function CloseOnEscape:onKeyPress(key)
+function ResetOnR:onKeyPress(key)
     if key == "r" then
-        loadLevel("game")
+        loadLevel(self.actor:scene().path)
     end
 end
 
-return CloseOnEscape
+return ResetOnR
