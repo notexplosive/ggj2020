@@ -8,6 +8,7 @@ function Asteroid:setup(asteroidSize)
     self.health = asteroidSize
     local collisionSize = 230
 
+
     if asteroidSize == 7 then
         self.actor:addComponent(Components.SpriteRenderer, "planetoid")
         collisionSize = 230
@@ -36,7 +37,12 @@ function Asteroid:setup(asteroidSize)
     self.actor:addComponent(Components.Velocity)
     self.actor:addComponent(Components.StayWithinBounds)
     self.actor:addComponent(Components.Solid)
-    
+
+    self.actor:addComponent(Components.BoundingBox)
+    self.actor:addComponent(Components.Hoverable)
+    self.actor:addComponent(Components.HoverableRenderer)
+    self.actor:addComponent(Components.Clickable)
+    self.actor:addComponent(Components.DestroyOnClick)
 end
 
 function Asteroid:onCollide(other)
@@ -51,21 +57,35 @@ end
 
 function Asteroid:onDestroy()
     self:createExplosion(0,0)
-
-    if self.asteroidSize > 4 then
-        for i=1, self.asteroidSize - 3 do
-            self:createDebris()
+    if self.asteroidSize == 7 then
+        for i=1, self.asteroidSize - 2 do
+            self:createDebris(i+1)
         end
+        self:createDebris(6)
+    elseif self.asteroidSize > 3 then
+        for i=1, self.asteroidSize - 2 do
+            self:createDebris(i+1)
+        end
+    elseif self.asteroidSize > 4 then
+        self:createDebris(love.math.random(1,4))
     elseif self.asteroidSize > 1 then
-        self:createDebris()
+        for i=1, self.asteroidSize do
+            self:createScrap(-10 + i * 10, love.math.random() * 10 - 5)
+        end
     else
-        local actor = self.actor:scene():addActor()
-        actor:setPos(self.actor:pos())
-        actor:addComponent(Components.Scrap)
+        self:createScrap(0,0)
     end
 end
 
-function Asteroid:createDebris()
+function Asteroid:createScrap(x, y)
+    local offsetVector = self.actor:pos()
+    offsetVector = offsetVector + Vector.new(x, y)
+    local scrapActor = self.actor:scene():addActor()
+    scrapActor:setPos(offsetVector)
+    scrapActor:addComponent(Components.Scrap)
+end
+
+function Asteroid:createDebris(asteroidSize)
     local xDir = love.math.random() * 2 - 1
     local yDir = love.math.random() * 2 - 1
     local offsetMagnitude = 16
@@ -78,10 +98,8 @@ function Asteroid:createDebris()
 
     local actor = self.actor:scene():addActor()
     actor:setPos(offsetVector)
-    actor:addComponent(Components.Asteroid, self.asteroidSize - 1)
+    actor:addComponent(Components.Asteroid, asteroidSize)
     actor.Velocity:set(xDir * 50, yDir * 50)
-
-    self:createExplosion(xDir * offsetMagnitude, yDir * offsetMagnitude)
 end
 
 function Asteroid:createExplosion(x, y)
