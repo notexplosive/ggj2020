@@ -80,7 +80,7 @@ function Player:onCollide(other)
         return
     end
 
-    sound = Assets.sounds.thump:get()
+    local sound = Assets.sounds.thump:get()
     sound:setPitch(1.5)
     sound:play()
 
@@ -139,7 +139,7 @@ end
 
 function Player:onDestroy()
     sound = Assets.sounds.spring:get()
-    sound:setPitch(0.05)
+    sound:setPitch(0.15)
     sound:play()
 
     local actor = self.actor:scene():addActor()

@@ -4,6 +4,14 @@ registerComponent(GameOverExplosion, "GameOverExplosion")
 
 function GameOverExplosion:awake()
     self.time = 0
+    local sound = Assets.sounds.boom:get()
+    local sound2 = Assets.sounds.boom:get()
+    sound:setVolume(1.2)
+    sound:setPitch(1.2)
+    sound:play()
+
+    sound2:setPitch(0.8)
+    sound:play()
 end
 
 function GameOverExplosion:draw(x, y)
