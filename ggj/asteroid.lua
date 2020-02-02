@@ -72,8 +72,6 @@ function Asteroid:createDebris()
     if self.asteroidSize == 7 then
         offsetMagnitude = 170
     end
-    xDir = 0;
-    yDir = 0;
 
     local offsetVector = self.actor:pos()
     offsetVector = offsetVector + (Vector.new(xDir, yDir) * offsetMagnitude)
