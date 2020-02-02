@@ -9,7 +9,7 @@ function BatteryIndicator:awake()
     local sp = self.actor:addComponent(Components.SpriteRenderer, "battery", "all", 2)
     --sp:setLoop(false)
     local actor = self.actor:scene():addActor()
-    actor:setPos(160, 48)
+    actor:setPos(180, 48)
     actor:addComponent(Components.CircleRenderer, 20, {0.25, 0.5, 0.25})
     actor:addComponent(Components.SpriteRenderer, "charge-status", "all", 2)
     self.chargeActor = actor
