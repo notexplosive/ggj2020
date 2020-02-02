@@ -71,7 +71,7 @@
 
     {
       "components": [
-        ["JumpGate", "end"],
+        ["JumpGate", "game6"],
         ["CollideRadius", 128],
         ["ShowOnMap", [1, 0, 1]]
       ],

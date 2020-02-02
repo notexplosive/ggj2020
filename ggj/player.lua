@@ -80,7 +80,11 @@ function Player:onCollide(other)
         return
     end
 
-    sound = Assets.sounds.thump:get()
+    self:hurtPlayer()
+end
+
+function Player:hurtPlayer()
+    local sound = Assets.sounds.thump:get()
     sound:setPitch(1.5)
     sound:play()
 
