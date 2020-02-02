@@ -8,6 +8,7 @@ function Player:awake()
     self.humSound:play()
     self.humSound:setPitch(0.5)
     self.humSound:setLooping(true)
+    self.lastJumpAttempt = love.timer.getTime()
 end
 
 function Player:update(dt)
@@ -51,12 +52,22 @@ function Player:onCollide(other)
             "This is a Jump Gate! These help you slingshot into the next system. In order to activate it you will need to employ the use of a Nano Interplanetary Travel Retrograde Operator (NITRO).\n\nA Jump Gate will only activate if you reach it at top speed using the NITRO.",
             "Please subscribe me to your mailing list"
         )
-
-        if self.actor.Nitro:isFastEnoughForJump() then
-            self:activateJumpGate(other)
+        local enemyCheck = gameScene:getFirstActorWithBehavior(Components.EnemyShip)
+        if enemyCheck then
+            if love.timer.getTime() > self.lastJumpAttempt + 1.5 then
+                statusLog("Gate disabled: Hostiles")
+                self.lastJumpAttempt = love.timer.getTime()
+            end
         else
-            if self.actor.Nitro:get() then
-                statusLog("Not fast enough for jump")
+            if self.actor.Nitro:isFastEnoughForJump() then
+                self:activateJumpGate(other)
+            else
+                if self.actor.Nitro:get() then
+                    if love.timer.getTime() > self.lastJumpAttempt + 1.5 then
+                        statusLog("Not fast enough for jump")
+                        self.lastJumpAttempt = love.timer.getTime()
+                    end
+                end
             end
         end
     end
