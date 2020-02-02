@@ -30,6 +30,10 @@ function Inventory:update(dt)
             actor:move(vec / 10 * dt * 60)
             if vec:length() < 32 then
                 actor:destroy()
+                local okSound = Assets.sounds["button-yes"]:get()
+                okSound:setPitch(2)
+                okSound:play()
+
                 self.scrap = self.scrap + 10
                 self.collectTimer = 0.25
             end

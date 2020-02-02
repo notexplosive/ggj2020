@@ -55,7 +55,7 @@ function TextRenderer:draw(x, y)
     end
 
     if self.shadow then
-        love.graphics.setColor(0, 0, 0)
+        love.graphics.setColor(0, 0, 0, self.color[4] or 1)
         love.graphics.printf(
             tostring(self.text),
             math.floor(x + 1),
