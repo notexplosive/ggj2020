@@ -48,8 +48,8 @@ function Player:onCollide(other)
     if other.JumpGate then
         EXEC_TUTORIAL(
             "jump-gate",
-            "This is a Jump Gate! These help you slingshot into the next system. In order to activate it you will need to employ the use of a Nano Interplanetary Travel Retrograde Operator (NITRO).\n\nA Jump Gate will only activate if you reach it at top speed using the NITRO.",
-            "Please subscribe me to your mailing list"
+            "This is a Jump Gate! These help you slingshot into the next system. In order to activate it you will need to employ the use of a Nano Interplanetary Travel Retrograde Operator (NITRO).\n\nA Jump Gate will only activate if you reach it at top speed using the NITRO and all nearby HOSTILES are eliminated.",
+            "Thanks for the cool tip"
         )
 
         if self.actor.Nitro:isFastEnoughForJump() then

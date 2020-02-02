@@ -25,6 +25,12 @@ end
 function Nitro:set(b)
     if b then
         self.actor.Velocity.terminalSpeed = self.fastTerminalSpeed
+
+        EXEC_TUTORIAL(
+            "use-nitro",
+            "Activating NITRO...\n\nNormally you must abide by the Intergalactic Speed Limit, meaning your thrusters will not allow you to exceed the prescribed terminal velocity.\n\nWhen you are using NITRO however, it lets the Intergalactic Police Force know that you're in a hurry, and as such you may exceed the terminal velocity up to a particular threshold.",
+            "See you, space cowboy"
+        )
     else
         self.actor.Velocity.terminalSpeed = self.normalTerminalSpeed
     end
