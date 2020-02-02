@@ -6,6 +6,12 @@ registerComponent(SceneRenderer, "SceneRenderer", {"Canvas"})
 
 -- equivalent to loadScene
 function SceneRenderer:setup(pathOrScene, args)
+    self:load(pathOrScene, args)
+
+    self.pathOrScene = pathOrScene
+end
+
+function SceneRenderer:load(pathOrScene, args)
     if type(pathOrScene) == "string" then
         local path = pathOrScene
         if args then
@@ -17,8 +23,8 @@ function SceneRenderer:setup(pathOrScene, args)
         self.scene = pathOrScene
     end
 
-    self.scene.sceneRenderer = self
     self.scene:setDimensions(self.actor.Canvas:getDimensions())
+    self.scene.sceneRenderer = self
 end
 
 function SceneRenderer:awake()
@@ -34,7 +40,9 @@ function SceneRenderer:draw(x, y)
                 love.graphics.setColor(self.backgroundColor)
                 love.graphics.rectangle("fill", 0, 0, self.actor.Canvas:getDimensions())
                 love.graphics.setColor(1, 1, 1, 1)
-                self.scene:draw()
+                if self.scene then
+                    self.scene:draw()
+                end
             end
         )
     end
@@ -81,7 +89,7 @@ function SceneRenderer:onMousePress(x, y, button, wasRelease, isClickConsumed)
         return
     end
 
-    local clickedOnScene = self.actor.Canvas:getRect():isVectorWithin(x, y)
+    local clickedOnScene = self.scene ~= nil and self.actor.Canvas:getRect():isVectorWithin(x, y)
 
     x = x - self.actor:pos().x
     y = y - self.actor:pos().y
@@ -101,7 +109,7 @@ function SceneRenderer:onMousePress(x, y, button, wasRelease, isClickConsumed)
         end
     end
 
-    if wasRelease then
+    if wasRelease and self.scene then
         self.scene:onMousePress(
             x + self.scene:getViewportPosition().x,
             y + self.scene:getViewportPosition().y,

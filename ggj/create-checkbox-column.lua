@@ -46,4 +46,8 @@ function CreateCheckboxColumn:onNotify(message)
     end
 end
 
+function CreateCheckboxColumn:onDisable()
+    self:setVal(0)
+end
+
 return CreateCheckboxColumn

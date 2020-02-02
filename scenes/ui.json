@@ -11,7 +11,8 @@
       "components": [
         ["BoundingBox", 220, 220],
         ["Canvas"],
-        ["SceneRenderer", "velocity"]
+        ["SceneRenderer", "velocity"],
+        ["Widget"]
       ]
     },
     {
@@ -19,6 +20,7 @@
         ["BoundingBox", 220, 260],
         ["Canvas"],
         ["SceneRenderer", "thrusters"],
+        ["Widget"],
         ["RightJustify"]
       ]
     },
@@ -26,7 +28,8 @@
       "components": [
         ["BoundingBox", 220, 220],
         ["Canvas"],
-        ["SceneRenderer", "map"]
+        ["SceneRenderer", "map"],
+        ["Widget"]
       ]
     },
     {
@@ -34,6 +37,7 @@
         ["BoundingBox", 220, 80],
         ["Canvas"],
         ["SceneRenderer", "time"],
+        ["Widget"],
         ["RightJustify"]
       ]
     },
@@ -41,14 +45,16 @@
       "components": [
         ["BoundingBox", 220, 80],
         ["Canvas"],
-        ["SceneRenderer", "resources"]
+        ["SceneRenderer", "resources"],
+        ["Widget"]
       ]
     },
     {
       "components": [
         ["BoundingBox", 220, 80],
         ["Canvas"],
-        ["SceneRenderer", "battery"]
+        ["SceneRenderer", "battery"],
+        ["Widget"]
       ]
     },
     {
