@@ -7,6 +7,10 @@ function Player:onCollide(other)
         return
     end
 
+    if not other.Solid then
+        return
+    end
+
     EXEC_TUTORIAL(
         "first-collide",
         "Looks like you've hit an object! Ouch!\n\nI'm just kidding of course, I'm just an instruction manual, I cannot feel pain. The AI driving your ship modules however, do simulate pain and are in constant agony every time experience hull damage*. It looks like on of your modules has been damaged, use your MPID (Mouse Pointer Input Device) to repair it.\nRepairs require scrap and battery power.\n\n" ..

@@ -23,6 +23,7 @@ end
 
 function SceneLayers:set(index, scene)
     self.list[index] = scene
+    return scene
 end
 
 -- Singleton!
