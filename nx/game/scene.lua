@@ -58,7 +58,7 @@ function Scene.fromPath(path, ...)
     local args = {...}
     local sceneData = DataLoader.loadTemplateFile("scenes/" .. path .. ".json", args)
     local scene = Scene.fromSceneData(sceneData)
-    self.path = path
+    scene.path = path
     return scene
 end
 
