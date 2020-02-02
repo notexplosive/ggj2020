@@ -4,8 +4,6 @@ local InvertThrusterCheckbox = {}
 registerComponent(InvertThrusterCheckbox, "InvertThrusterCheckbox", {"Checkbox"})
 
 function InvertThrusterCheckbox:awake()
-    self.actor.Checkbox.state = State:get("invert-thrusters")
-
     for i, column in self.actor:scene():eachActorWith(Components.CreateCheckboxColumn) do
         if column.CreateCheckboxColumn.playerControlValue == "thrustRight" then
             self.rCol = column
@@ -14,6 +12,13 @@ function InvertThrusterCheckbox:awake()
         if column.CreateCheckboxColumn.playerControlValue == "thrustLeft" then
             self.lCol = column
         end
+    end
+end
+
+function InvertThrusterCheckbox:start()
+    local state = State:get("invert-thrusters")
+    if state then
+        self.actor.Checkbox:Clickable_onClickOn()
     end
 end
 
