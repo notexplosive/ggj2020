@@ -5,19 +5,24 @@ registerComponent(Asteroid, "Asteroid")
 function Asteroid:setup(asteroidSize)
     self.asteroidSize = asteroidSize
     local collisionSize = 230
+    local health = 1
 
     if asteroidSize == 7 then
         self.actor:addComponent(Components.SpriteRenderer, "planetoid")
         collisionSize = 230
+        health = 8
     elseif asteroidSize == 6 then
         self.actor:addComponent(Components.SpriteRenderer, "big-rock")
         collisionSize = 32 - 4
+        health = 4
     elseif asteroidSize == 5 then
         self.actor:addComponent(Components.SpriteRenderer, "bean-rock")
         collisionSize = 32 - 8
+        health = 3
     elseif asteroidSize == 4 then
         self.actor:addComponent(Components.SpriteRenderer, "chunk-rock")
         collisionSize = 32 - 12
+        health = 2
     elseif asteroidSize == 3 then
         self.actor:addComponent(Components.SpriteRenderer, "just-rock")
         collisionSize = 32 - 17
@@ -34,7 +39,7 @@ function Asteroid:setup(asteroidSize)
     self.actor:addComponent(Components.Velocity)
     self.actor:addComponent(Components.StayWithinBounds)
     self.actor:addComponent(Components.Solid)
-    self.actor:addComponent(Components.EnemyHealth, asteroidSize)
+    self.actor:addComponent(Components.EnemyHealth, health)
 
     -- self.actor:addComponent(Components.BoundingBox)
     -- self.actor:addComponent(Components.Hoverable)
