@@ -2,6 +2,11 @@ local Player = {}
 
 registerComponent(Player, "Player")
 
+function Player:awake()
+    self.lastHit = love.timer.getTime()
+    
+end
+
 function Player:onCollide(other)
     if other.LaserBullet and other.LaserBullet.owner == self.actor then
         return
@@ -10,6 +15,12 @@ function Player:onCollide(other)
     if not other.Solid then
         return
     end
+
+    if love.timer.getTime() < self.lastHit + 0.5 then
+        return
+    end
+
+    self.lastHit = love.timer.getTime()
 
     EXEC_TUTORIAL(
         "first-collide",
