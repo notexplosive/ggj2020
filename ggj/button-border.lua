@@ -26,7 +26,9 @@ function ButtonBorder:Hoverable_onHoverEnd()
 end
 
 function ButtonBorder:Clickable_onClickOn()
-    Assets.sounds["button-ok"]:stopThenPlay()
+    local sound = Assets.sounds["ui-beep"]:get()
+    sound:setPitch(1.2)
+    sound:play()
 end
 
 return ButtonBorder

@@ -4,11 +4,25 @@ registerComponent(Player, "Player")
 
 function Player:awake()
     self.invulnerable = 0
+    self.humSound = Assets.sounds["space-hum"]:get()
+    self.humSound:play()
+    self.humSound:setPitch(0.5)
+    self.humSound:setLooping(true)
 end
 
 function Player:update(dt)
     if self.invulnerable > 0 then
         self.invulnerable = self.invulnerable - dt
+    end
+
+    local thrust =
+        self.actor.PlayerControl.inputState.thrustLeft + self.actor.PlayerControl.inputState.thrustRight +
+        self.actor.PlayerControl.inputState.thrustMiddle
+
+    self.humSound:setVolume(thrust / 10)
+
+    if not self.actor.visible then
+        self.humSound:stop()
     end
 end
 

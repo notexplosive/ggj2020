@@ -73,7 +73,9 @@ function Widget:Clickable_onClickOn(button)
                 self.isDisabled = false
                 self.isRecovering = true
                 self.recoverTimer = self.maxRecoverTime
+                Assets.sounds["button-ok"]:stopThenPlay()
             else
+                Assets.sounds["button-no"]:stopThenPlay()
                 statusLog("Not enough scrap!")
             end
         end
@@ -84,6 +86,7 @@ function Widget:recover()
     if self.storeScene then
         self.actor.SceneRenderer.scene = self.storeScene
         statusLog(self.widgetName .. " repaired!")
+        Assets.sounds["button-yes"]:stopThenPlay()
     end
     self.isRecovering = false
     self.isDisabled = false
