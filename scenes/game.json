@@ -12,6 +12,7 @@
         ["SpriteRenderer", "temp-ship"],
         ["SectorBoundsRef"],
         ["Velocity"],
+        ["Laser"],
         ["StayWithinBounds"],
         ["Player"],
         ["TimeControlRef"],
