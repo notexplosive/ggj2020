@@ -3,12 +3,12 @@ local Player = {}
 registerComponent(Player, "Player")
 
 function Player:awake()
-    self.invulnerable = love.timer.getTime()
+    self.invulnerable = 0
 end
 
 function Player:update(dt)
     if self.invulnerable > 0 then
-        self.invulnerable -= dt
+        self.invulnerable = self.invulnerable - dt
     end
 end
 
@@ -21,7 +21,7 @@ function Player:onCollide(other)
         return
     end
 
-    if invulnerable > 0 then
+    if self.invulnerable > 0 then
         return
     end
 

@@ -51,5 +51,6 @@
   "battery": ["battery.png", 128, 32],
   "charge-status": ["charge-status.png", 32, 32],
   "explosion": ["explosion.png", 64, 64],
-  "ship-explosion": ["ship-explosion.png", 64, 64]
+  "ship-explosion": ["ship-explosion.png", 64, 64],
+  "planetoid-explosion": ["planetoid-explosion.png", 512, 512]
 }
