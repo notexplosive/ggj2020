@@ -48,6 +48,7 @@
       "active": [1, 6]
     }
   ],
-  "battery": ["battery.png", 32, 32],
-  "charge-status": ["charge-status.png", 32, 32]
+  "battery": ["battery.png", 128, 32],
+  "charge-status": ["charge-status.png", 32, 32],
+  "explosion": ["explosion.png", 64, 64]
 }

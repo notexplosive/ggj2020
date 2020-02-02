@@ -47,4 +47,10 @@ function Player:onCollide(other)
     end
 end
 
+function Player:onDestroy()
+    local actor = self.actor:scene():addActor()
+    actor:setPos(self.actor:pos())
+    actor:addComponent(Components.Explosion)
+end
+
 return Player
