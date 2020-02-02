@@ -65,13 +65,13 @@ function Player:onCollide(other)
         return
     end
 
-    sound = Assets.sounds.thump:get()
-    sound:setPitch(1.5)
-    sound:play()
-
     if self.invulnerable > 0 then
         return
     end
+
+    sound = Assets.sounds.thump:get()
+    sound:setPitch(1.5)
+    sound:play()
 
     self.invulnerable = 0.5
 

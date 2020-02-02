@@ -8,13 +8,16 @@
       "components": [["SectorBounds", 5000, 3000]]
     },
     {
+      "components": [["SectorTitle", "Tuto Real"]]
+    },
+    {
       "components": [["StartTutorial"]]
     },
     {
       "components": [["BecomePlayer"]],
       "pos": [200, 520]
     },
-    
+
     {
       "components": [
         ["JumpGate", "game2"],
