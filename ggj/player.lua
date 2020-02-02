@@ -24,7 +24,7 @@ function Player:update(dt)
         engineVolume = engineVolume * 2
     end
 
-    self.humSound:setVolume(engineVolume / 20)
+    self.humSound:setVolume(engineVolume / 16)
     self.humSound:setPitch(engineVolume / 10 + 0.1)
 
     if not self.actor.visible then
