@@ -1,17 +1,24 @@
-local Reboot = {}
+local BootUp = {}
 
-registerComponent(Reboot, "Reboot")
+registerComponent(BootUp, "BootUp")
 
-function Reboot:setup()
+function BootUp:awake()
+    self.progress = 0
 end
 
-function Reboot:awake()
+function BootUp:draw(x, y)
+    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.rectangle("line", self.actor.BoundingBox:getRect():xywh())
+    local x, y, w, h = self.actor.BoundingBox:getRect():xywh()
+    local percent = self.progress / 3
+    love.graphics.rectangle("fill", x, y, w * percent, h)
+    if percent > 1 then
+        self.actor:scene():destroyAllActors()
+    end
 end
 
-function Reboot:draw(x, y)
+function BootUp:update(dt)
+    self.progress = self.progress + dt
 end
 
-function Reboot:update(dt)
-end
-
-return Reboot
+return BootUp

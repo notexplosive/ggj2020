@@ -87,6 +87,7 @@ end
 
 function Widget:disable()
     if not self.isDisabled then
+        statusLog(self.widgetName .. " disabled!")
         self.isDisabled = true
         self.actor.SceneRenderer.scene:onDisable()
         self.storeScene = self.actor.SceneRenderer.scene
@@ -104,6 +105,12 @@ function Widget:getBatteryUsage()
     end
 
     return 1
+end
+
+function Widget:onDisable()
+    if self.actor.SceneRenderer.scene then
+        self.actor.SceneRenderer.scene:onDisable()
+    end
 end
 
 return Widget
