@@ -9,10 +9,9 @@
     {
       "components": [
         ["PlayerRef"],
-        ["TextRenderer", "0", 22, null, null, null, null, 30, -12],
         ["BatteryIndicator"]
       ],
-      "pos": [40, 48]
+      "pos": [60, 48]
     }
   ]
 }
