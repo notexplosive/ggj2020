@@ -21,7 +21,7 @@ function EnemyShip:awake()
 end
 
 function EnemyShip:update(dt)
-    local rotateSpeed = 0.7
+    local rotateSpeed = 0.9
 
     if self.hitPlayer > 0 then
 
@@ -33,7 +33,7 @@ function EnemyShip:update(dt)
         local dirToPlayer = self.playerPointer:pos() - self.actor:pos()
         if self:shouldChasePlayer(dirToPlayer) then
             dirToPlayer = dirToPlayer:normalized()
-            self.actor.Velocity:set(dirToPlayer * 50)
+            self.actor.Velocity:set(dirToPlayer * 120)
             self.actor:setAngle(Vector.angle(dirToPlayer))
         else
             self.actor:setAngle(self.actor:angle() + dt * rotateSpeed)
@@ -46,9 +46,9 @@ end
 
 function EnemyShip:shouldChasePlayer(dirToPlayer)
     local distance = dirToPlayer:length()
-    if distance < 150 then
+    if distance < 250 then
         return true
-    elseif distance > 200 then
+    elseif distance > 500 then
         return false
     else
         return true
@@ -57,7 +57,7 @@ end
 
 function EnemyShip:SetVelocityByAngle()
     local angle = self.actor:angle()
-    local moveSpeed = 100
+    local moveSpeed = 130
     self.actor.Velocity:set(math.cos(angle)*moveSpeed, math.sin(angle)*moveSpeed)
 end
 

@@ -25,14 +25,19 @@
     },
 
     {
-      "components": [["Asteroid", 6]],
+      "components": [["Asteroid", 4]],
       "pos": [1300, 1820]
     },
 
     {
-      "components": [["Asteroid", 6]],
+      "components": [["Asteroid", 5]],
       "pos": [1600, 520]
     },
+
+    {
+        "components": [["Asteroid", 5]],
+        "pos": [300, 2520]
+      },
 
     {
       "components": [["EnemyShip"]],

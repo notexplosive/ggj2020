@@ -40,6 +40,11 @@
     },
 
     {
+      "components": [["EnemyShip"]],
+      "pos": [1700, 1220]
+    },
+
+    {
       "components": [
         ["JumpGate", "game4"],
         ["CollideRadius", 128],
