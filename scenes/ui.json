@@ -13,7 +13,8 @@
         ["Canvas"],
         ["SceneRenderer", "velocity"],
         ["Widget", "Velocity", 1]
-      ]
+      ],
+      "name": "widgetVel"
     },
     {
       "components": [
@@ -22,7 +23,8 @@
         ["SceneRenderer", "thrusters"],
         ["Widget", "Thrusters", 3],
         ["RightJustify"]
-      ]
+      ],
+      "name": "widgetThrus"
     },
     {
       "components": [
@@ -30,7 +32,8 @@
         ["Canvas"],
         ["SceneRenderer", "map"],
         ["Widget", "Map", 1]
-      ]
+      ],
+      "name": "widgetMap"
     },
     {
       "components": [
@@ -39,7 +42,8 @@
         ["SceneRenderer", "time"],
         ["Widget", "Chronostasis", 2],
         ["RightJustify"]
-      ]
+      ],
+      "name": "widgetTime"
     },
     {
       "components": [
@@ -48,7 +52,8 @@
         ["SceneRenderer", "laser"],
         ["Widget", "Laser", 2],
         ["RightJustify"]
-      ]
+      ],
+      "name": "widgetLaser"
     },
     {
       "components": [
@@ -57,7 +62,8 @@
         ["SceneRenderer", "nitro"],
         ["Widget", "Nitro", 1],
         ["RightJustify"]
-      ]
+      ],
+      "name": "widgetNitro"
     },
 
     {
@@ -66,7 +72,8 @@
         ["Canvas"],
         ["SceneRenderer", "resources"],
         ["Widget", "Scrap Counter", 2]
-      ]
+      ],
+      "name": "widgetResource"
     },
     {
       "components": [
@@ -74,7 +81,8 @@
         ["Canvas"],
         ["SceneRenderer", "battery"],
         ["Widget", "Battery Indicator", 2]
-      ]
+      ],
+      "name": "widgetBattery"
     },
     {
       "components": [
@@ -82,7 +90,8 @@
         ["Canvas"],
         ["SceneRenderer", "status"],
         ["Widget", "Status", 1]
-      ]
+      ],
+      "name": "widgetStatus"
     },
 
     {

@@ -35,7 +35,7 @@ function Widget:draw(x, y)
     if self.isDisabled or self.isRecovering then
         local recoverPercent = 1 - (self.recoverTimer / self.maxRecoverTime)
 
-        if recoverPercent > 1 then
+        if recoverPercent > 1 and self.isRecovering then
             self:recover()
         end
 
@@ -83,10 +83,11 @@ function Widget:recover()
         self.actor.SceneRenderer.scene = self.storeScene
     end
     self.isRecovering = false
+    self.isDisabled = false
 end
 
 function Widget:disable()
-    if not self.isDisabled then
+    if not self.isDisabled and not self.isRecovering then
         statusLog(self.widgetName .. " disabled!")
         self.isDisabled = true
         if self.actor.SceneRenderer.scene then
@@ -119,6 +120,10 @@ function Widget:onKeyPress(key, scancode, wasRelease)
     if key == "p" and wasRelease then
         self:disable()
     end
+end
+
+function Widget:isInactive()
+    return self.isDisabled or self.isRecovering
 end
 
 return Widget

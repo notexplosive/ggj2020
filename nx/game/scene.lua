@@ -190,6 +190,9 @@ end
 function Scene:getFirstBehavior(behavior)
     assert(behavior, "null component")
     local actors = self:getAllActorsWithBehavior(behavior)
+    if #actors < 1 then
+        return nil
+    end
     return actors[1][behavior.name]
 end
 

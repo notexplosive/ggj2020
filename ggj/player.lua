@@ -4,7 +4,6 @@ registerComponent(Player, "Player")
 
 function Player:awake()
     self.lastHit = love.timer.getTime()
-    
 end
 
 function Player:onCollide(other)
@@ -34,7 +33,7 @@ function Player:onCollide(other)
 
     local enabledWidgets = {}
     for i, widget in ipairs(allWidgets) do
-        if not widget.Widget.isDisabled then
+        if not widget.Widget:isInactive() then
             append(enabledWidgets, widget)
         end
     end
