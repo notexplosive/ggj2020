@@ -59,7 +59,9 @@ function Asteroid:onDestroy()
     elseif self.asteroidSize > 1 then
         self:createDebris()
     else
-        
+        local actor = self.actor:scene():addActor()
+        actor:setPos(self.actor:pos())
+        actor:addComponent(Components.Scrap)
     end
 end
 
@@ -70,6 +72,8 @@ function Asteroid:createDebris()
     if self.asteroidSize == 7 then
         offsetMagnitude = 170
     end
+    xDir = 0;
+    yDir = 0;
 
     local offsetVector = self.actor:pos()
     offsetVector = offsetVector + (Vector.new(xDir, yDir) * offsetMagnitude)
