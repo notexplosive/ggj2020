@@ -1,0 +1,9 @@
+{
+  "root": [["PositionCenterX"], ["SceneBorder"], ["IndicatorBackground"]],
+  "actors": [
+    {
+      "components": [["StatusLogger"]],
+      "pos": [2, 58]
+    }
+  ]
+}

@@ -40,4 +40,6 @@ sceneLayers:add(backgroundScene)
 sceneLayers:add(gameScene)
 sceneLayers:add(uiScene)
 
+Scene:createEvent("onDisable", {})
+
 love.graphics.setBackgroundColor(59 / 256, 20 / 256, 67 / 256, 1)

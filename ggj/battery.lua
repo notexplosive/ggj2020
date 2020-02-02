@@ -17,7 +17,14 @@ function Battery:update(dt)
 end
 
 function Battery:calculateUsage()
-    return self.actor.PlayerControl:getBatteryUsage() + self.actor.TimeControlRef:getBatteryUsage() - 5
+    local widgetUsage = 0
+    for i, widget in uiScene:eachActorWith(Components.Widget) do
+        widgetUsage = widgetUsage + widget.Widget:getBatteryUsage()
+    end
+
+    local solarPower = 10
+    return self.actor.PlayerControl:getBatteryUsage() + self.actor.TimeControlRef:getBatteryUsage() + widgetUsage -
+        solarPower
 end
 
 function Battery:getPercent()
