@@ -1,4 +1,4 @@
-ALLOW_DEBUG = true
+ALLOW_DEBUG = false
 DEBUG = false
 
 require("nx/util")
@@ -59,9 +59,15 @@ function loadLevel(levelName)
     backgroundScene = sceneLayers:set(1, Scene.fromPath("background"))
     gameScene = sceneLayers:set(2, Scene.fromPath(levelName))
     uiScene = sceneLayers:set(3, Scene.fromPath("ui"))
-    overlay = sceneLayers:set(4, Scene.fromPath("overlay"))
+    overlay = sceneLayers:set(4, Scene.new())
 end
 
 Scene:createEvent("onDisable", {})
 
 love.graphics.setBackgroundColor(59 / 256, 20 / 256, 67 / 256, 1)
+
+--[[ death sound
+sound = Assets.sounds.spring:get()
+sound:setPitch(0.05)
+sound:play()
+]]

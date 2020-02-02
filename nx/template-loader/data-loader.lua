@@ -88,6 +88,7 @@ function DataLoader.loadComponentListData(actor, componentList)
         end
 
         if component.setup and #params > 0 then
+            assert(actor[componentName], componentName .. " is nil on this actor")
             actor[componentName]:setup(unpack(params))
         end
 

@@ -11,22 +11,7 @@
       "components": [["StartTutorial"]]
     },
     {
-      "components": [
-        ["SpriteRenderer", "temp-ship"],
-        ["CameraFollowMe"],
-        ["SectorBoundsRef"],
-        ["Velocity"],
-        ["Laser"],
-        ["StayWithinBounds"],
-        ["Player"],
-        ["TimeControlRef"],
-        ["Inventory"],
-        ["PlayerControl"],
-        ["Nitro"],
-        ["Battery", 200],
-        ["ShowOnMap", [0, 1, 0], 64],
-        ["CollideRadius", 16]
-      ],
+      "components": [["BecomePlayer"]],
       "pos": [200, 520]
     },
 

@@ -31,7 +31,10 @@ function Sprite.new(filename, gridSizeX, gridSizeY)
 end
 
 function Sprite:getQuadAt(index)
-    assert(index > 0 and index <= self.frames, "Attempted to index quad " .. index .. ", expected 0 to " .. self.frames)
+    assert(
+        index > 0 and index <= self.frames,
+        self.filename .. ": Attempted to index quad " .. index .. ", expected 0 to " .. self.frames
+    )
     index = math.floor(index) - 1
     local fullWidth = self.gridWidth * index
     local x = fullWidth % self.image:getWidth()

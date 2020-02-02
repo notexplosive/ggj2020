@@ -37,7 +37,14 @@ end
 
 function Checkbox:Clickable_onClickOn()
     self.state = not self.state
-    self.actor:callForAllComponents("Checkbox_onStateChange", self.message)
+
+    if self.state then
+        Assets.sounds["check-on"]:stopThenPlay()
+    else
+        Assets.sounds["check-off"]:stopThenPlay()
+    end
+
+    self.actor:callForAllComponents("Checkbox_onStateChange", self.message, self.state)
     if self.actor.Parent then
         self.actor.Parent:get():callForAllComponents("Checkbox_onStateChange", self.message)
     end
