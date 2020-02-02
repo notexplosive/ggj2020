@@ -4,7 +4,7 @@ registerComponent(Nitro, "Nitro")
 
 function Nitro:awake()
     self.normalTerminalSpeed = self.actor.Velocity.terminalSpeed
-    self.fastTerminalSpeed = self.normalTerminalSpeed * 3
+    self.fastTerminalSpeed = self.normalTerminalSpeed * 4
 end
 
 function Nitro:getBatteryUsage()

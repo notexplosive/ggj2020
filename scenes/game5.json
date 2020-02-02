@@ -1,78 +1,76 @@
 {
-    "root": [["HandleCollide"], ["ResetOnR"]],
-    "actors": [
-      {
-        "components": [["Viewport", 2], ["CameraFollowPlayer"]]
-      },
-      {
-        "components": [["SectorBounds", 6000, 4000]]
-      },
-      {
-        "components": [["StartTutorial"]]
-      },
-      {
-        "components": [["SectorTitle", "Level 5"]]
-      },
-      {
-        "components": [["BecomePlayer"]],
-        "pos": [1200, 2520],
-        "angle": 0
-      },
-  
-  
-      {
-        "components": [["Asteroid", 6]],
-        "pos": [1000, 1520]
-      },
-  
-      {
-        "components": [["Asteroid", 6]],
-        "pos": [1300, 1820]
-      },
-  
-      {
-        "components": [["Asteroid", 6]],
-        "pos": [1600, 520]
-      },
-  
-      {
-        "components": [["EnemyShip"]],
-        "pos": [500, 520]
-      },
+  "root": [["HandleCollide"], ["ResetOnR"]],
+  "actors": [
+    {
+      "components": [["Viewport", 2], ["CameraFollowPlayer"]]
+    },
+    {
+      "components": [["SectorBounds", 6000, 4000]]
+    },
+    {
+      "components": [["StartTutorial"]]
+    },
+    {
+      "components": [["SectorTitle", "Space Pirate Enclave"]]
+    },
+    {
+      "components": [["BecomePlayer"]],
+      "pos": [1200, 2520],
+      "angle": 0
+    },
 
-      {
-        "components": [["EnemyShip"]],
-        "pos": [1500, 220]
-      },
+    {
+      "components": [["Asteroid", 6]],
+      "pos": [1000, 1520]
+    },
 
-      {
-        "components": [["EnemyShip"]],
-        "pos": [4500, 500]
-      },
+    {
+      "components": [["Asteroid", 6]],
+      "pos": [1300, 1820]
+    },
 
-      {
-        "components": [["EnemyShip"]],
-        "pos": [4500, 1500]
-      },
+    {
+      "components": [["Asteroid", 6]],
+      "pos": [1600, 520]
+    },
 
-      {
-        "components": [["EnemyShip"]],
-        "pos": [5000, 1000]
-      },
+    {
+      "components": [["EnemyShip"]],
+      "pos": [500, 520]
+    },
 
-      {
-        "components": [["EnemyShip"]],
-        "pos": [4000, 1000]
-      },
-  
-      {
-        "components": [
-          ["JumpGate", "end"],
-          ["CollideRadius", 128],
-          ["ShowOnMap", [1, 0, 1]]
-        ],
-        "pos": [4500, 1000]
-      }
-    ]
-  }
-  
+    {
+      "components": [["EnemyShip"]],
+      "pos": [1500, 220]
+    },
+
+    {
+      "components": [["EnemyShip"]],
+      "pos": [4500, 500]
+    },
+
+    {
+      "components": [["EnemyShip"]],
+      "pos": [4500, 1500]
+    },
+
+    {
+      "components": [["EnemyShip"]],
+      "pos": [5000, 1000]
+    },
+
+    {
+      "components": [["EnemyShip"]],
+      "pos": [4000, 1000]
+    },
+
+    {
+      "components": [
+        ["JumpGate", "end"],
+        ["CollideRadius", 128],
+        ["ShowOnMap", [1, 0, 1]]
+      ],
+      "pos": [4500, 1000]
+    }
+  ]
+}

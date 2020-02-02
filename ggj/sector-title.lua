@@ -4,7 +4,7 @@ local SectorTitle = {}
 registerComponent(SectorTitle, "SectorTitle")
 
 function SectorTitle:setup(title)
-    self.content = "Discovered Sector:\n" .. title
+    self.content = title
     self.time = -1
 end
 

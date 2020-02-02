@@ -11,7 +11,7 @@
       "components": [["StartTutorial"]]
     },
     {
-      "components": [["SectorTitle", "Level 2"]]
+      "components": [["SectorTitle", "Asteroid Feels"]]
     },
     {
       "components": [["BecomePlayer"]],
