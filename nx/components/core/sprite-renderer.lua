@@ -111,6 +111,10 @@ function SpriteRenderer:setLoop(b)
     self.actor.PlayHead:setLoop(b)
 end
 
+function SpriteRenderer:setFrame(frame)
+    self.actor.AnimationFrameTracker:set(frame)
+end
+
 function SpriteRenderer:setFrame(index)
     self.actor.AnimationFrameTracker:set(index)
 end
