@@ -15,6 +15,15 @@
 
     {
       "components": [
+        ["Checkbox"],
+        ["TextRenderer", "Mute Audio", 20, 1000, "left", null, null, 50, 5],
+        ["MuteCheckbox"]
+      ],
+      "pos": [128, 664]
+    },
+
+    {
+      "components": [
         ["BoundingBox", 400, 64],
         ["Hoverable"],
         ["ButtonBorder"],

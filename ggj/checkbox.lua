@@ -46,7 +46,7 @@ function Checkbox:Clickable_onClickOn()
 
     self.actor:callForAllComponents("Checkbox_onStateChange", self.message, self.state)
     if self.actor.Parent then
-        self.actor.Parent:get():callForAllComponents("Checkbox_onStateChange", self.message)
+        self.actor.Parent:get():callForAllComponents("Checkbox_onStateChange", self.message, self.state)
     end
 end
 

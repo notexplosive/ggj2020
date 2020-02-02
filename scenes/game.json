@@ -5,7 +5,7 @@
       "components": [["Viewport", 2], ["CameraFollowPlayer"]]
     },
     {
-      "components": [["SectorBounds", 3000, 3000]]
+      "components": [["SectorBounds", 3000, 2000]]
     },
     {
       "components": [["SectorTitle", "Tuto Real"]]
