@@ -21,7 +21,10 @@ function BootUp:draw(x, y)
         if State:get("power-failed-first-time") then
             EXEC_TUTORIAL(
                 "power-failure",
-                "Reboot complete!\n\nWhen the StinkBug 0.8 runs out of battery, all systems including the viewing window conveniently shutThe battery will passively regenerate power if only a few subsystems are in use.\n\nBe aware of your surroundings when you run out of battery as you will not be able to see or do anything while the reboot is in progress.",
+                "Reboot complete!\n\n" ..
+                    "When the StinkBug 0.8 runs out of battery, all systems including the viewing window conveniently shut down." ..
+                        "The battery will passively regenerate power if only a few subsystems are in use." ..
+                            "\n\nBe aware of your surroundings when you run out of battery as you will not be able to see or do anything while the reboot is in progress.",
                 "Thanks for rebooting for me!"
             )
         end

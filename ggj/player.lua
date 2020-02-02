@@ -49,7 +49,7 @@ function Player:onCollide(other)
     if other.JumpGate then
         EXEC_TUTORIAL(
             "jump-gate",
-            "This is a Jump Gate! These help you slingshot into the next system. In order to activate it you will need to employ the use of a Nano Interplanetary Travel Retrograde Operator (NITRO).\n\nA Jump Gate will only activate if you reach it at top speed using the NITRO and all nearby HOSTILES are eliminated.",
+            "This is a Jump Gate! These help you slingshot into the next system. In order to activate it you will need to employ the use of a Nano Interplanetary Travel Retrograde Operator (NITRO).\n\nA Jump Gate will only activate if you reach it at top speed any any angle using the NITRO and all nearby HOSTILES are eliminated.",
             "Thanks for the cool tip"
         )
         local enemyCheck = gameScene:getFirstActorWithBehavior(Components.EnemyShip)
@@ -96,8 +96,10 @@ function Player:hurtPlayer()
 
     EXEC_TUTORIAL(
         "first-collide",
-        "Looks like you've hit an object! Ouch!\n\nI'm just kidding of course, I'm just an instruction manual, I cannot feel pain. The AI behind your ship modules however, do feel pain every time experience hull damage*. Speaking of, it looks like on of your modules has been damaged, use your MPID (Mouse Pointer Input Device) to repair it.\nRepairs require scrap and battery power.\n\n" ..
-            "*Interface with AI Module Controller not included in 0.8 model",
+        "Looks like you've hit an object! Ouch!\n\n" ..
+            "I'm kidding of course, I'm just an instruction manual, I cannot feel pain. The AI behind your ship modules however, can. Speaking of, it looks like one of your modules has been damaged, use your MPID (Mouse Pointer Input Device) to repair it." ..
+                "\nRepairs require scrap and battery power.\n\n" ..
+                    "*Interface with AI Module Controller not included in 0.8 model",
         "Very cool and also informative!"
     )
 
@@ -141,7 +143,7 @@ end
 
 function Player:onDestroy()
     sound = Assets.sounds.spring:get()
-    sound:setPitch(0.05)
+    sound:setPitch(0.15)
     sound:play()
 
     local actor = self.actor:scene():addActor()

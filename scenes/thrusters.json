@@ -31,23 +31,23 @@
     {
       "components": [
         ["PlayerRef"],
-        ["CreateCheckboxColumn", 3, "thrustLeft", "L"]
+        ["CreateCheckboxColumn", 3, "thrustLeft", ""]
       ],
-      "pos": [42, 94]
+      "pos": [42, 88]
     },
     {
       "components": [
         ["PlayerRef"],
-        ["CreateCheckboxColumn", 3, "thrustRight", "R"]
+        ["CreateCheckboxColumn", 3, "thrustRight", ""]
       ],
-      "pos": [138, 94]
+      "pos": [138, 88]
     },
     {
       "components": [
         ["PlayerRef"],
-        ["CreateCheckboxColumn", 3, "thrustMiddle", "M"]
+        ["CreateCheckboxColumn", 3, "thrustMiddle", ""]
       ],
-      "pos": [90, 94]
+      "pos": [90, 88]
     },
     {
       "components": [
