@@ -18,7 +18,7 @@ function Battery:update(dt)
         self.quantity = self.max
     end
 
-    if self.quantity / self.max < 0.25 then
+    if self.quantity / self.max < 0.10 then
         if Assets.sounds["battery-low"]:play() then
             statusLog("Low battery!")
         end

@@ -71,3 +71,6 @@ sound = Assets.sounds.spring:get()
 sound:setPitch(0.05)
 sound:play()
 ]]
+local music = Assets.sounds.music:get()
+music:setVolume(0.25)
+music:play()
