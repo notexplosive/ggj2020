@@ -11,7 +11,7 @@ function GameOverExplosion:awake()
     sound:play()
 
     sound2:setPitch(0.8)
-    sound:play()
+    sound2:play()
 end
 
 function GameOverExplosion:draw(x, y)

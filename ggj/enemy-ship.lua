@@ -24,7 +24,6 @@ function EnemyShip:update(dt)
     local rotateSpeed = 0.9
 
     if self.hitPlayer > 0 then
-
         self.hitPlayer = self.hitPlayer - dt
         return
     end
@@ -58,7 +57,7 @@ end
 function EnemyShip:SetVelocityByAngle()
     local angle = self.actor:angle()
     local moveSpeed = 130
-    self.actor.Velocity:set(math.cos(angle)*moveSpeed, math.sin(angle)*moveSpeed)
+    self.actor.Velocity:set(math.cos(angle) * moveSpeed, math.sin(angle) * moveSpeed)
 end
 
 function EnemyShip:onCollide(other)
@@ -67,12 +66,15 @@ function EnemyShip:onCollide(other)
     end
 end
 
-
 function EnemyShip:onDestroy()
-    self:createExplosion(0,0)
+    self:createExplosion(0, 0)
 
-    for j=1, 3 do
-        for i=1, 3 do
+    local sound = Assets.sounds.boom:get()
+    sound:setVolume(1.2)
+    sound:play()
+
+    for j = 1, 3 do
+        for i = 1, 3 do
             local xOff = love.math.random() * 4 - 12 + i * 10
             local yOff = love.math.random() * 4 - 12 + j * 10
             self:createScrap(xOff, yOff)

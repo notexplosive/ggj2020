@@ -49,24 +49,24 @@ function Asteroid:setup(asteroidSize)
 end
 
 function Asteroid:onDestroy()
-    self:createExplosion(0,0)
+    self:createExplosion(0, 0)
     if self.asteroidSize == 7 then
-        for i=1, self.asteroidSize - 2 do
-            self:createDebris(i+1)
+        for i = 1, self.asteroidSize - 2 do
+            self:createDebris(i + 1)
         end
         self:createDebris(6)
     elseif self.asteroidSize > 3 then
-        for i=1, self.asteroidSize - 2 do
-            self:createDebris(i+1)
+        for i = 1, self.asteroidSize - 2 do
+            self:createDebris(i + 1)
         end
     elseif self.asteroidSize > 4 then
-        self:createDebris(love.math.random(1,4))
+        self:createDebris(love.math.random(1, 4))
     elseif self.asteroidSize > 1 then
-        for i=1, self.asteroidSize do
+        for i = 1, self.asteroidSize do
             self:createScrap(-10 + i * 10, love.math.random() * 10 - 5)
         end
     else
-        self:createScrap(0,0)
+        self:createScrap(0, 0)
     end
 end
 
@@ -96,6 +96,10 @@ function Asteroid:createDebris(asteroidSize)
 end
 
 function Asteroid:createExplosion(x, y)
+    local sound = Assets.sounds.boom:get()
+    sound:setVolume(1.2)
+    sound:play()
+
     local actor = self.actor:scene():addActor()
     local offsetVector = self.actor:pos()
     offsetVector = offsetVector + Vector.new(x, y)

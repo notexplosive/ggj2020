@@ -11,6 +11,8 @@ function TimeControl:update(dt)
     else
         TIMESCALE = 1
     end
+
+    musicTrack:setPitch(TIMESCALE)
 end
 
 function TimeControl:onDisable()

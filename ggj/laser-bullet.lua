@@ -15,7 +15,7 @@ function LaserBullet:awake()
     self.actor:addComponent(Components.CollideRadius, 8)
     self.actor:addComponent(Components.Lifetime, 1)
     local sound = Assets.sounds["button-no"]:get()
-    sound:setPitch(0.7)
+    sound:setPitch(0.8 * TIMESCALE)
     sound:setVolume(0.3)
     sound:play()
 end

@@ -40,4 +40,12 @@ function Nitro:set(b)
     self.enabled = b
 end
 
+function Nitro:getFastSpeed()
+    return self.fastTerminalSpeed
+end
+
+function Nitro:getSlowSpeed()
+    return self.normalTerminalSpeed
+end
+
 return Nitro
