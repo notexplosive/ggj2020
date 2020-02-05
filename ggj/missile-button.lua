@@ -4,7 +4,6 @@ registerComponent(MissileButton, "MissileButton")
 
 function MissileButton:awake()
     self.actor:addComponentSafe(Components.Hoverable)
-    self.actor:addComponentSafe(Components.HoverableRenderer)
     self.actor:addComponentSafe(Components.Clickable)
 end
 
