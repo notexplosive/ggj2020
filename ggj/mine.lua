@@ -1,9 +1,9 @@
-local Bomb = {}
+local Mine = {}
 
-registerComponent(Bomb, "Bomb")
+registerComponent(Mine, "Mine")
 
-function Bomb:awake()
-    self.actor:addComponent(Components.SpriteRenderer, "bomb")
+function Mine:awake()
+    self.actor:addComponent(Components.SpriteRenderer, "Mine")
     collisionSize = 32
     health = 1
 
@@ -16,14 +16,14 @@ function Bomb:awake()
     self.actor:addComponent(Components.PlayerRef)
 end
 
-function Bomb:onCollide(other)
+function Mine:onCollide(other)
     self.actor:destroy()
     if other.Player then
         other.visible = false
     end
 end
 
-function Bomb:onDestroy()
+function Mine:onDestroy()
     self:createExplosion(0, 0)
 
     self.playerPointer = self.actor.PlayerRef:get()
@@ -44,7 +44,7 @@ function Bomb:onDestroy()
     sound2:play()
 end
 
-function Bomb:createExplosion(x, y)
+function Mine:createExplosion(x, y)
     local actor = self.actor:scene():addActor()
     local offsetVector = self.actor:pos()
     offsetVector = offsetVector + Vector.new(x, y)
@@ -53,4 +53,4 @@ function Bomb:createExplosion(x, y)
     actor:addComponent(Components.GameOverExplosion)
 end
 
-return Bomb
+return Mine

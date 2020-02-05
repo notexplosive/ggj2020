@@ -1,75 +1,72 @@
 {
-    "root": [["HandleCollide"], ["ResetOnR"]],
-    "actors": [
-      {
-        "components": [["Viewport", 2], ["CameraFollowPlayer"]]
-      },
-      {
-        "components": [["SectorBounds", 6000, 4000]]
-      },
-      {
-        "components": [["StartTutorial"]]
-      },
-      {
-        "components": [["SectorTitle", "Minefield Detected"]]
-      },
-      {
-        "components": [["BecomePlayer"]],
-        "pos": [1200, 2520],
-        "angle": 270
-      },
-  
-      {
-        "components": [["Asteroid", 6]],
-        "pos": [1000, 1520]
-      },
-  
-      {
-        "components": [["Asteroid", 5]],
-        "pos": [1300, 1820]
-      },
-  
-      {
-        "components": [["Asteroid", 6]],
-        "pos": [1600, 520]
-      },
+  "root": [["HandleCollide"], ["ResetOnR"]],
+  "actors": [
+    {
+      "components": [["Viewport", 2], ["CameraFollowPlayer"]]
+    },
+    {
+      "components": [["SectorBounds", 6000, 4000]]
+    },
+    {
+      "components": [["StartTutorial"]]
+    },
+    {
+      "components": [["SectorTitle", "Minefield Detected"]]
+    },
+    {
+      "components": [["BecomePlayer"]],
+      "pos": [1200, 2520],
+      "angle": 270
+    },
 
-      {
-        "components": [["Bomb"]],
-        "pos": [1200, 2320]
-      },
+    {
+      "components": [["Asteroid", 6]],
+      "pos": [1000, 1520]
+    },
 
-      {
-        "components": [["Bomb"]],
-        "pos": [1300, 520]
-      },
+    {
+      "components": [["Asteroid", 5]],
+      "pos": [1300, 1820]
+    },
 
-      {
-        "components": [["Bomb"]],
-        "pos": [1900, 520]
-      },
+    {
+      "components": [["Asteroid", 6]],
+      "pos": [1600, 520]
+    },
 
-      {
-        "components": [["Bomb"]],
-        "pos": [1600, 820]
-      },
+    {
+      "components": [["Mine"]],
+      "pos": [1200, 2320]
+    },
 
-      {
-        "components": [["Bomb"]],
-        "pos": [1600, 220]
-      },
+    {
+      "components": [["Mine"]],
+      "pos": [1300, 520]
+    },
 
+    {
+      "components": [["Mine"]],
+      "pos": [1900, 520]
+    },
 
-  
-      {
-        "components": [
-          ["JumpGate", "end"],
-          ["CollideRadius", 128],
-          ["ShowOnMap", [1, 0, 1]]
-        ],
-        "pos": [1600, 520],
-        "angle": 90
-      }
-    ]
-  }
-  
+    {
+      "components": [["Mine"]],
+      "pos": [1600, 820]
+    },
+
+    {
+      "components": [["Mine"]],
+      "pos": [1600, 220]
+    },
+
+    {
+      "components": [
+        ["JumpGate", "end"],
+        ["CollideRadius", 128],
+        ["ShowOnMap", [1, 0, 1]]
+      ],
+      "pos": [1600, 520],
+      "angle": 90
+    }
+  ]
+}
