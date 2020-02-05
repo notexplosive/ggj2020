@@ -6,6 +6,10 @@ function Velocity:setup(v, y)
     self.vec = Vector.new(v, y)
 end
 
+function Velocity:reverseSetup()
+    return self.vec:clone()
+end
+
 function Velocity:awake()
     self.vec = Vector.new()
     self.terminalSpeed = 128

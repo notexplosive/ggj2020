@@ -29,7 +29,16 @@
         ["ButtonBorder"],
         ["Clickable"],
         ["StartGameOnClick"],
-        ["BoundedTextRenderer", "Launch", 33, "center", 1, [1, 1, 1, 1], 0, 10]
+        [
+          "BoundedTextRenderer",
+          "New Game",
+          33,
+          "center",
+          1,
+          [1, 1, 1, 1],
+          0,
+          10
+        ]
       ],
       "pos": [128, 500]
     },

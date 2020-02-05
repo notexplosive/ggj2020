@@ -49,6 +49,16 @@
       "components": [
         ["BoundingBox", 220, 80],
         ["Canvas"],
+        ["SceneRenderer", "nitro"],
+        ["Widget", "Nitro", 1],
+        ["RightJustify"]
+      ],
+      "name": "widgetNitro"
+    },
+    {
+      "components": [
+        ["BoundingBox", 220, 80],
+        ["Canvas"],
         ["SceneRenderer", "laser"],
         ["Widget", "Laser", 2],
         ["RightJustify"]
@@ -59,11 +69,11 @@
       "components": [
         ["BoundingBox", 220, 80],
         ["Canvas"],
-        ["SceneRenderer", "nitro"],
-        ["Widget", "Nitro", 1],
+        ["SceneRenderer", "missile"],
+        ["Widget", "Missile", 2],
         ["RightJustify"]
       ],
-      "name": "widgetNitro"
+      "name": "widgetMissile"
     },
 
     {

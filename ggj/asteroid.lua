@@ -40,6 +40,7 @@ function Asteroid:setup(asteroidSize)
     self.actor:addComponent(Components.StayWithinBounds)
     self.actor:addComponent(Components.Solid)
     self.actor:addComponent(Components.EnemyHealth, health)
+    self.actor:addComponent(Components.MissileTargetable)
 
     -- self.actor:addComponent(Components.BoundingBox)
     -- self.actor:addComponent(Components.Hoverable)

@@ -14,6 +14,7 @@ function EnemyShip:awake()
     self.actor:addComponent(Components.Solid)
     self:SetVelocityByAngle()
     self.actor:addComponent(Components.EnemyHealth, 1)
+    self.actor:addComponent(Components.MissileTargetable)
     self.actor:addComponent(Components.PlayerRef)
 
     self.chasing = false

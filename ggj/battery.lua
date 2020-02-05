@@ -42,6 +42,7 @@ function Battery:calculateUsage()
     return self.actor.ShipControl:getBatteryUsage() + self.actor.TimeControlRef:getBatteryUsage() +
         self.actor.Laser:getBatteryUsage() +
         self.actor.Nitro:getBatteryUsage() +
+        self.actor.MissileLauncher:getBatteryUsage() +
         widgetUsage -
         solarPower
 end

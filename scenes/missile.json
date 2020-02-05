@@ -1,0 +1,23 @@
+{
+  "root": [
+    ["PositionCenterX"],
+    ["TextRenderer", "MISSILE", 22, 100000, "center"],
+    ["SceneBorder"]
+  ],
+  "actors": [
+    {
+      "components": [
+        ["BoundingBox", 80, 32],
+        ["MissileRechargeBackground"],
+        ["PlayerRef"],
+        ["Hoverable"],
+        ["Clickable"],
+        ["ButtonBorder"],
+        ["MissileButton"],
+        ["TextRenderer", "FIRE", 12, null, null, null, null, 8, 8],
+        ["PositionCenterX"]
+      ],
+      "pos": [0, 40]
+    }
+  ]
+}

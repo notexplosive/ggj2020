@@ -42,10 +42,6 @@ function Player:onKeyPress(key, scanCode, wasRelease)
 end
 
 function Player:onCollide(other)
-    if other.LaserBullet and other.LaserBullet.owner == self.actor then
-        return
-    end
-
     if other.JumpGate then
         EXEC_TUTORIAL(
             "jump-gate",
