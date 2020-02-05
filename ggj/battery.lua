@@ -3,7 +3,7 @@ local State = require("nx/state")
 local sceneLayers = require("nx/scene-layers")
 local Battery = {}
 
-registerComponent(Battery, "Battery", {"PlayerControl", "TimeControlRef"})
+registerComponent(Battery, "Battery", {"ShipControl", "TimeControlRef"})
 
 function Battery:setup(quantity)
     self.quantity = quantity
@@ -39,7 +39,7 @@ function Battery:calculateUsage()
     end
 
     local solarPower = 20
-    return self.actor.PlayerControl:getBatteryUsage() + self.actor.TimeControlRef:getBatteryUsage() +
+    return self.actor.ShipControl:getBatteryUsage() + self.actor.TimeControlRef:getBatteryUsage() +
         self.actor.Laser:getBatteryUsage() +
         self.actor.Nitro:getBatteryUsage() +
         widgetUsage -

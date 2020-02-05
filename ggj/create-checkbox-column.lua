@@ -2,7 +2,7 @@ local CreateCheckboxColumn = {}
 
 registerComponent(CreateCheckboxColumn, "CreateCheckboxColumn", {"PlayerRef"})
 
-function CreateCheckboxColumn:setup(count, playerControlValue, label)
+function CreateCheckboxColumn:setup(count, ShipControlValue, label)
     local scene = self.actor:scene()
     local total = count - 1
     for i = 0, total do
@@ -15,7 +15,7 @@ function CreateCheckboxColumn:setup(count, playerControlValue, label)
     end
 
     self.max = count
-    self.playerControlValue = playerControlValue
+    self.ShipControlValue = ShipControlValue
 
     local tx = self.actor:addComponent(Components.TextRenderer, label, 14, 10000, "center")
     tx.offset = Vector.new(16, -15)
@@ -32,7 +32,7 @@ function CreateCheckboxColumn:setVal(val)
 
     local player = self.actor.PlayerRef:get()
     if player then
-        player.PlayerControl:setInputVal(self.playerControlValue, val)
+        player.ShipControl:setInputVal(self.ShipControlValue, val)
     end
 end
 

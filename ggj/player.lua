@@ -17,8 +17,8 @@ function Player:update(dt)
     end
 
     local engineVolume =
-        self.actor.PlayerControl.inputState.thrustLeft + self.actor.PlayerControl.inputState.thrustRight +
-        self.actor.PlayerControl.inputState.thrustMiddle
+        self.actor.ShipControl.inputState.thrustLeft + self.actor.ShipControl.inputState.thrustRight +
+        self.actor.ShipControl.inputState.thrustMiddle
 
     if self.actor.Nitro.enabled then
         engineVolume = engineVolume * 2

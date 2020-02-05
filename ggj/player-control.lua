@@ -1,8 +1,8 @@
-local PlayerControl = {}
+local ShipControl = {}
 
-registerComponent(PlayerControl, "PlayerControl", {"Velocity"})
+registerComponent(ShipControl, "ShipControl", {"Velocity"})
 
-function PlayerControl:awake()
+function ShipControl:awake()
     self.inputState = {}
 
     self.inputState.thrustLeft = 0
@@ -12,7 +12,7 @@ function PlayerControl:awake()
     self.debrisTimer = 1
 end
 
-function PlayerControl:update(dt)
+function ShipControl:update(dt)
     local velocity = self.actor.Velocity
     local vec = velocity:get()
     local angle = self.actor:angle()
@@ -45,7 +45,7 @@ function PlayerControl:update(dt)
     velocity:set(vec)
 end
 
-function PlayerControl:dropDebris()
+function ShipControl:dropDebris()
     if self.debrisTimer < 0 then
         local actor = self.actor:scene():addActor()
         --actor:setPos(self.actor:pos() - self.actor.Velocity:get():normalized():setAngle(self.actor:angle()) * 32)
@@ -60,20 +60,20 @@ function PlayerControl:dropDebris()
     end
 end
 
-function PlayerControl:setInputVal(key, value)
+function ShipControl:setInputVal(key, value)
     assert(indexOf(getKeys(self.inputState), key))
     self.inputState[key] = value
 end
 
-function PlayerControl:onCollide(other)
+function ShipControl:onCollide(other)
     if other.Solid then
         local vec = self.actor:pos() - other:pos()
         self.actor.Velocity:set(vec:normalized() * vec:length())
     end
 end
 
-function PlayerControl:getBatteryUsage()
+function ShipControl:getBatteryUsage()
     return (self.inputState.thrustLeft + self.inputState.thrustRight + self.inputState.thrustMiddle) * 2
 end
 
-return PlayerControl
+return ShipControl
