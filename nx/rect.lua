@@ -68,6 +68,14 @@ function Rect:move(v, y)
     return self
 end
 
+function Rect:setX(x)
+    self.pos.x = x
+end
+
+function Rect:setY(y)
+    self.pos.y = y
+end
+
 function Rect:x()
     return self.pos.x
 end

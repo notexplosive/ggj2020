@@ -9,14 +9,15 @@
       "components": [
         [
           "TextRenderer",
-          "Macrolabs Wonders 3000 is Restarting...",
+          "[ VIEWING MODULE OFFLINE ]\nReboot in Progress",
           66,
           5000,
           "center"
         ],
-        ["PositionCenterX"]
+        ["PositionCenterX"],
+        ["PowerOnAnimation"]
       ],
-      "pos": [0, 300]
+      "pos": [0, 280]
     }
   ]
 }

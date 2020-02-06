@@ -47,6 +47,12 @@ function Battery:calculateUsage()
         solarPower
 end
 
+function Battery:onKeyPress(key, scancode, wasRelease)
+    if key == "[" then
+        self.quantity = -1
+    end
+end
+
 function Battery:getPercent()
     return self.quantity / self.max
 end

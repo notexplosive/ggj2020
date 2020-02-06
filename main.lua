@@ -73,5 +73,5 @@ sound:play()
 ]]
 musicTrack = Assets.sounds.music:get()
 musicTrack:setLooping(true)
-musicTrack:setVolume(0.25)
+musicTrack:setVolume(0.15)
 musicTrack:play()
