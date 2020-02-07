@@ -4,20 +4,9 @@ registerComponent(Missile, "Missile")
 
 function Missile:awake()
     self.actor:addComponent(Components.CollideRadius, 8)
-
-    -- PUT MISSILE SPRITE HERE:
-    -- self.actor:addComponent(Components.SpriteRenderer,"missile")
+    self.actor:addComponent(Components.SpriteRenderer,"missle", "all")
 
     self.actor.Velocity.terminalSpeed = 256
-end
-
-function Missile:draw(x, y)
-    -- THEN DELETE THIS SNIPPET
-    -- temporary until we have a missile sprite
-    local vec = Vector.new(x, y)
-    local back = vec - Vector.newPolar(16, self.actor:angle())
-    love.graphics.line(vec.x, vec.y, back.x, back.y)
-    -- /temporary
 end
 
 function Missile:update(dt)
