@@ -20,6 +20,11 @@
     },
 
     {
+      "components": [["EnemyShip"]],
+      "pos": [3000, 1500]
+    },
+
+    {
       "components": [["Asteroid", 6]],
       "pos": [1000, 1520]
     },

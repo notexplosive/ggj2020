@@ -4,7 +4,7 @@ registerComponent(TimeControlRef, "TimeControlRef")
 
 function TimeControlRef:getBatteryUsage()
     if TIMESCALE ~= 1 then
-        return 50
+        return 100
     end
 
     return 0
