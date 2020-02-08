@@ -4,7 +4,7 @@ registerComponent(Missile, "Missile")
 
 function Missile:awake()
     self.actor:addComponent(Components.CollideRadius, 8)
-    self.actor:addComponent(Components.SpriteRenderer,"missle", "all")
+    self.actor:addComponent(Components.SpriteRenderer, "missle", "all")
 
     self.actor.Velocity.terminalSpeed = 256
 end
@@ -23,14 +23,19 @@ function Missile:update(dt)
         local displacement = actor:pos() - self.actor:pos()
         if (displacement):length() < 300 + radius then
             local myAngle = self.actor:angle()
-            local theirAngle = displacement:angle()
 
-            if math.abs(myAngle - theirAngle) > math.pi / 8 then
-                if myAngle > theirAngle then
-                    myAngle = myAngle - dt * 5
-                else
-                    myAngle = myAngle + dt * 5
-                end
+            local leftFeeler = self.actor:pos() + Vector.newPolar(32, myAngle + 5)
+            local rightFeeler = self.actor:pos() + Vector.newPolar(32, myAngle - 5)
+
+            local distanceFromRight = (rightFeeler - actor:pos()):length()
+            local distanceFromLeft = (leftFeeler - actor:pos()):length()
+
+            local shouldTurnRight = distanceFromLeft < distanceFromRight
+
+            if shouldTurnRight then
+                myAngle = myAngle - dt * 5
+            else
+                myAngle = myAngle + dt * 5
             end
 
             self.actor:setAngle(myAngle)
