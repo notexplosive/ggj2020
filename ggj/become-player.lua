@@ -21,6 +21,7 @@ function BecomePlayer:awake()
     self.actor:addComponent(Components.Battery, 400)
     self.actor:addComponent(Components.ShowOnMap, {0, 1, 0}, 64)
     self.actor:addComponent(Components.CollideRadius, 16)
+    self.actor:addComponent(Components.ToggleFullscreenWithKeyboard)
 end
 
 return BecomePlayer

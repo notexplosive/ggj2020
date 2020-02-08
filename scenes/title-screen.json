@@ -24,6 +24,16 @@
 
     {
       "components": [
+        ["Checkbox"],
+        ["TextRenderer", "Fullscreen", 20, 1000, "left", null, null, 50, 5],
+        ["FullscreenCheckbox"],
+        ["ToggleFullscreenWithKeyboard"]
+      ],
+      "pos": [128, 700]
+    },
+
+    {
+      "components": [
         ["BoundingBox", 400, 64],
         ["Hoverable"],
         ["ButtonBorder"],
