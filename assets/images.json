@@ -55,5 +55,8 @@
   "planetoid-explosion": ["planetoid-explosion.png", 512, 512],
   "bullet-explosion": ["bullet-explosion.png", 32, 32],
   "bullet": ["bullet.png", 16, 16],
-  "missle": ["rocket.png", 32, 32]
+  "missle": ["rocket.png", 32, 32],
+  "star2": ["star2.png", 16, 16],
+  "star3": ["star3.png", 16, 16],
+  "star4": ["star4.png", 16, 16]
 }
