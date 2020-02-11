@@ -60,7 +60,7 @@
         ["BoundingBox", 220, 80],
         ["Canvas"],
         ["SceneRenderer", "laser"],
-        ["Widget", "Laser", 2],
+        ["Widget", "Laser", 3],
         ["RightJustify"]
       ],
       "name": "widgetLaser"
@@ -70,7 +70,7 @@
         ["BoundingBox", 220, 80],
         ["Canvas"],
         ["SceneRenderer", "missile"],
-        ["Widget", "Missile", 2],
+        ["Widget", "Missile", 1],
         ["RightJustify"]
       ],
       "name": "widgetMissile"

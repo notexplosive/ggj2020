@@ -3,7 +3,7 @@ local Mine = {}
 registerComponent(Mine, "Mine")
 
 function Mine:awake()
-    self.actor:addComponent(Components.SpriteRenderer, "Mine")
+    self.actor:addComponent(Components.SpriteRenderer, "bomb")
     collisionSize = 32
     health = 1
 

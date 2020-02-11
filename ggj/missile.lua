@@ -7,6 +7,16 @@ function Missile:awake()
     self.actor:addComponent(Components.SpriteRenderer, "missle", "all")
 
     self.actor.Velocity.terminalSpeed = 256
+
+    local sound = Assets.sounds.boom:get()
+    sound:setPitch(0.4)
+    sound:setVolume(0.5)
+    sound:play()
+
+    local sound2 = Assets.sounds["muffled-boom-1"]:get()
+    sound2:setPitch(2)
+    sound2:setVolume(0.5)
+    sound2:play()
 end
 
 function Missile:update(dt)
@@ -42,6 +52,16 @@ function Missile:update(dt)
             break
         end
     end
+end
+
+function Missile:onDestroy()
+    local act = self.actor:scene():addActor()
+    act:setPos(self.actor:pos())
+    act:addComponent(Components.Explosion)
+
+    local sound2 = Assets.sounds["muffled-boom-1"]:get()
+    sound2:setVolume(0.5)
+    sound2:play()
 end
 
 return Missile

@@ -2,7 +2,7 @@ local MissileLauncher = {}
 
 registerComponent(MissileLauncher, "MissileLauncher")
 
-local missileCooldown = 3
+local missileCooldown = 15
 
 function MissileLauncher:awake()
     self.cooldown = 0

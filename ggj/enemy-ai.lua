@@ -17,6 +17,7 @@ function EnemyAI:update(dt)
             self.actor.ShipControl.inputState.thrustRight = r
             self.actor.ShipControl.inputState.thrustLeft = l
             self.actor.ShipControl.inputState.thrustMiddle = m
+            return
         end
 
         local myAngle = self.actor:angle()

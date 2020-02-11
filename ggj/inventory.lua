@@ -3,19 +3,23 @@ local Inventory = {}
 
 registerComponent(Inventory, "Inventory")
 
+local valueOfOneScrap = 10
+
 function Inventory:setup()
 end
 
 function Inventory:awake()
     self.scrap = State:get("scrap-count") or 0
     self.collectTimer = 0
+    self.step = 0
 end
 
 function Inventory:update(dt)
     if self.collectTimer > 0 then
         self.collectTimer = self.collectTimer - dt
         if self.collectTimer < 0 then
-            statusLog("Collected scrap")
+            statusLog("Collected " .. self.step * valueOfOneScrap .. " scrap")
+            self.step = 0
 
             EXEC_TUTORIAL(
                 "collect-scrap",
@@ -32,11 +36,13 @@ function Inventory:update(dt)
             if vec:length() < 32 then
                 actor:destroy()
                 local okSound = Assets.sounds["button-yes"]:get()
-                okSound:setPitch(2)
+                okSound:setPitch(0.75 + 0.25 * clamp(self.step, 0, 5))
+                okSound:setVolume(0.5)
+                self.step = self.step + 1
                 okSound:play()
 
-                self.scrap = self.scrap + 10
-                self.collectTimer = 0.25
+                self.scrap = self.scrap + valueOfOneScrap
+                self.collectTimer = 0.5
             end
         end
     end

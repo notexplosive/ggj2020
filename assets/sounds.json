@@ -1,3 +1,5 @@
 {
-    "ouch": ["ouch.ogg"]
+  "ouch": ["ouch.ogg"],
+  "muffled-boom-1": ["muffled-boom_nenadsimic.ogg"],
+  "muffled-boom-2": ["muffled-boom_zimbot.ogg"]
 }
