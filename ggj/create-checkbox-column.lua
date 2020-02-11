@@ -21,8 +21,17 @@ function CreateCheckboxColumn:setup(count, ShipControlValue, label)
     tx.offset = Vector.new(16, -15)
 end
 
-function CreateCheckboxColumn:Checkbox_onStateChange(message)
-    self:setVal(tonumber(message))
+function CreateCheckboxColumn:Checkbox_onStateChange(message, state)
+    local num = tonumber(message)
+    if not state then
+        num = num - 1
+
+        if num <= 0 then
+            num = 0
+        end
+    end
+
+    self:setVal(num)
 end
 
 function CreateCheckboxColumn:setVal(val)

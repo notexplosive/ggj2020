@@ -6,7 +6,7 @@ function Checkbox:setup(state, message, label)
     self.state = state
     self.message = message
     if label then
-        self.actor:addComponent(Components.TextRenderer, label, 12, nil, nil, nil, nil, 0, -12)
+        self.actor:addComponent(Components.TextRenderer, label, 14, nil, nil, nil, nil, 0, -15)
     end
 end
 
