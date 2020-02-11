@@ -29,8 +29,8 @@ function Nitro:set(b)
         EXEC_TUTORIAL(
             "use-nitro",
             "Activating NITRO...\n\n" ..
-                "Normally you must abide by the Intergalactic Speed Limit, meaning your thrusters will not allow you to exceed the prescribed terminal velocity.\n\n" ..
-                    "When you are using NITRO however, it lets the Intergalactic Police Force know that you're in a hurry, and as such you may exceed the terminal velocity up to a particular threshold.\n\nNITRO does not provide any speed, it just increases your terminal speed. You still need to use your thrusters.",
+                "NITRO will raise your terminal velocity." ..
+                    "\n\nNITRO does not provide any speed so you will still need to use your thrusters if you want to go fast.",
             "See you, space cowboy"
         )
     else

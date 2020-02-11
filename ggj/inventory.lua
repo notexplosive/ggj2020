@@ -23,7 +23,7 @@ function Inventory:update(dt)
 
             EXEC_TUTORIAL(
                 "collect-scrap",
-                "You've collected some SCRAP!\n\nYou can use Scrap to repair damaged modules when the wear out.\n\nPlease note doing your own repairs will void your warranty.",
+                "You've collected some scrap!\n\nYou can use Scrap to repair damaged modules when they are damaged",
                 "Wow! So useful! Thanks Operator's Manual!"
             )
         end

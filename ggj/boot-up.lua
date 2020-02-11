@@ -20,9 +20,8 @@ function BootUp:draw(x, y)
                 "power-failure",
                 "Reboot complete!\n\n" ..
                     "When the StinkBug 0.8 runs out of battery, all systems including the viewing window conveniently shut down." ..
-                        "The battery will passively regenerate power if only a few subsystems are in use." ..
-                            "\n\nBe aware of your surroundings when you run out of battery as you will not be able to see or do anything while the reboot is in progress.",
-                "Thanks for rebooting for me!"
+                        "The battery passively regenerates power over time, but only if you're not consuming too much power by doing things like re-printing missiles or using your thrusters.",
+                "How convenient! Thanks for rebooting for me!"
             )
         end
     end

@@ -9,7 +9,7 @@ function Mine:awake()
 
     self.actor:addComponent(Components.CollideRadius, collisionSize)
     self.actor:addComponent(Components.Velocity)
-    self.actor:addComponent(Components.ShowOnMap, {1, 0, 1}, 128)
+    self.actor:addComponent(Components.ShowOnMap, {1, 0, 0})
     self.actor:addComponent(Components.StayWithinBounds)
     self.actor:addComponent(Components.Solid)
     self.actor:addComponent(Components.EnemyHealth, health)

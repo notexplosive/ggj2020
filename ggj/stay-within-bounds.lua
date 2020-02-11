@@ -29,6 +29,14 @@ function StayWithinBounds:update(dt)
         isOutOfBounds = true
     end
 
+    if isOutOfBounds and self.actor.Player then
+        EXEC_TUTORIAL(
+            "out-of-bounds",
+            "You're at the edge of the Sector (see your map on the left, if it's not broken). When you try to leave the boundaries of the sector you will be automatically pulled back in.",
+            "That doesn't make any sense"
+        )
+    end
+
     self.isOutOfBounds = isOutOfBounds
 end
 

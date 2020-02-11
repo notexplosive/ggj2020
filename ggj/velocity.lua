@@ -33,11 +33,13 @@ function Velocity:set(v, y)
     if length > self.terminalSpeed then
         self.vec = self.vec:normalized() * self.terminalSpeed
 
-        EXEC_TUTORIAL(
-            "velocity-tut",
-            "Green widgets are non-interactive. They just expose information and statistics about your ship.\n\nThe widget in the top left for instance is the Velocity widget. It indicates the direction your facing and the direction your moving. If the white vector is at the edge of the circle, that means you're at the maximum speed allowed by the Intergalactic Police Force and your ship will not allow you to move any faster.\n\nIf you would like to increase your maximum speed, enable NITRO.",
-            "Gotta go fast!"
-        )
+        if self.actor.Player then
+            EXEC_TUTORIAL(
+                "velocity-tut",
+                "Green widgets are non-interactive. They just expose information and statistics about your ship.\n\nThe widget in the top left for instance is the Velocity widget. It indicates the direction your facing and the direction your moving. If the white vector is at the edge of the circle, that means you're at your maximum safe velocity, and your ship will not allow you to move any faster.\n\nIf you would like to increase your maximum speed, enable NITRO.",
+                "Gotta go fast!"
+            )
+        end
     end
 end
 

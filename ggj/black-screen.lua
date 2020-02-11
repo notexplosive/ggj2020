@@ -13,7 +13,7 @@ end
 
 function BlackScreen:draw(x, y)
     local opac = self.time
-    love.graphics.setColor(0, 0, 0, opac)
+    love.graphics.setColor(0, 0, 0, clamp(opac, 0, 0.8))
     if opac > 1 and not self.actor.BoundingBox then
         self.actor:addComponent(Components.BoundingBox, 500, 80)
         self.actor:addComponent(Components.PositionCenterX)
